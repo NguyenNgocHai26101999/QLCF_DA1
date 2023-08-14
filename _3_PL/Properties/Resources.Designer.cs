@@ -63,9 +63,59 @@ namespace _3_PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1600x400_Highlands {
+            get {
+                object obj = ResourceManager.GetObject("1600x400_Highlands", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _50ADTC_Giainhietcungnguoithuong_2432x1269 {
+            get {
+                object obj = ResourceManager.GetObject("50ADTC_Giainhietcungnguoithuong_2432x1269", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_d1853295_230524144026 {
+            get {
+                object obj = ResourceManager.GetObject("image-d1853295-230524144026", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap momo_upload_api_210524134049_637574604492504535 {
+            get {
+                object obj = ResourceManager.GetObject("momo-upload-api-210524134049-637574604492504535", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Voucher_highlands_coffee_thang_6 {
+            get {
+                object obj = ResourceManager.GetObject("Voucher-highlands-coffee-thang-6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
