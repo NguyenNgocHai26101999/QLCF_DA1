@@ -586,10 +586,7 @@ namespace _3_PL.View
             txbSurplus.Text = (double.Parse(txbReceived.Text) - double.Parse(txbTotal.Text.Split(" ")[0])).ToString() + " " + "VNĐ";
             ShowBill();
         }
-        private void btnExportBill_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             picClock.BackgroundImage = GUIClock.ClockImage(400, 400);
@@ -636,6 +633,25 @@ namespace _3_PL.View
             {
                 e.Handled = true;
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Image img = Image.FromFile(Directory.GetCurrentDirectory() + @"\IMGSDA1\" + "HeaderBill.png");
+            e.Graphics.DrawImage(img, 0, 0, img.Width, img.Height);
+            e.Graphics.DrawString("Ngày: " + DateTime.Now.ToShortDateString(),new Font("Arial", 23, FontStyle.Regular),Brushes.Black,new Point(25,190));
+            var NguoiTao = DB.Accounts.Where(c => c.Status == 1).ToList()[0].DisplayName;
+            e.Graphics.DrawString("Người tạo: " + NguoiTao, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, 230));
+            e.Graphics.DrawString("----------------------------------------------------------------------------", new Font("Arial", 23, FontStyle.Regular), Brushes.Gray, new Point(25, 260));
+            e.Graphics.DrawString("Tên món", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, 290));
+            e.Graphics.DrawString("SL", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(550, 290));
+            e.Graphics.DrawString("Thành tiền", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, 290));
+            e.Graphics.DrawString("----------------------------------------------------------------------------", new Font("Arial", 23, FontStyle.Regular), Brushes.Gray, new Point(25, 310));
+        }
+        private void btnExportBill_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
         }
     }
 }
