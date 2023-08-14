@@ -28,55 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            button1 = new Button();
-            label1 = new Label();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(247, 155);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(395, 155);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(247, 121);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
             // 
             // Test
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(610, 452);
-            Controls.Add(label1);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            ClientSize = new Size(1003, 569);
             Name = "Test";
             Text = "Test";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private Button button1;
-        private Label label1;
     }
 }

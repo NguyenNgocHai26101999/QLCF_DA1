@@ -7,11 +7,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using QLCF_DA1Context = _1_DAL.Models.QLCF_DA1Context;
 
 namespace _3_PL.View
 {
@@ -20,7 +23,9 @@ namespace _3_PL.View
         private CategoryService _categoryService;
         private FoodService _foodService;
         private IAccountService _accountService;
-
+        private BillService _billService;
+        private BillInfoService _billInfoService;
+        private QLCF_DA1Context _QLCFDA1Context;
 
         private int idClick;
         public FormManagement()
@@ -29,10 +34,37 @@ namespace _3_PL.View
             _foodService = new FoodService();
             _categoryService = new CategoryService();
             _accountService = new AccountService();
+            _billService = new BillService();
+            _billInfoService = new BillInfoService();
+            _QLCFDA1Context = new QLCF_DA1Context();
             LoadDgvFood();
             LoadDgvFoodCategories();
             LoadAccount();
+            LoadDgvBill();
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormManagement_Load(object sender, EventArgs e)
+        {
+            cbStatusFood.Items.Add("Bán");
+            cbStatusFood.Items.Add("Dừng bán");
+            cbCategoryFood.DataSource = _categoryService.GetCategoryFromDB().Select(c => c.Name).ToList();
+            btnEditFood.Enabled = false;
+            btnEditCa.Enabled = false;
+            btnUpdateAccount.Enabled = false;
+            btnXoaAccount.Enabled = false;
+        }
+
+        #region FoodCategories
         public void LoadDgvFoodCategories()
         {
             var fc = _categoryService.GetCategoryFromDB().ToList();
@@ -49,6 +81,8 @@ namespace _3_PL.View
         }
         private void dgvCategoryFood_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnEditCa.Enabled = true;
+
             int rowIndex = e.RowIndex;
 
             if (rowIndex == _categoryService.GetCategoryFromDB().Count || rowIndex == -1)
@@ -69,7 +103,7 @@ namespace _3_PL.View
         }
         private void btnAddCa_Click(object sender, EventArgs e)
         {
-            var obj = new FoodCategory();
+            var obj = new _1_DAL.Models.FoodCategory();
 
             obj.Name = txbNameCategory.Text;
             if (txbNameCategory.Text.Trim().ToLower() == "" || txbNameCategory.Text.Trim().ToLower() == null)
@@ -118,53 +152,60 @@ namespace _3_PL.View
             //        return;
             //    }
             //}
-            var db2 = new QLCF_DA1Context();
-            db2.FoodCategories.Update(obj);
+            //var db2 = new QLCF_DA1Context();
+            _categoryService.UpdateCategory(obj);
 
-            db2.SaveChanges();
+            //db2.SaveChanges();
 
             MessageBox.Show("Sửa thành công");
 
             LoadDgvFoodCategories();
         }
-        //Food
+
+        #endregion
+
+        #region Foods
         public void LoadDgvFood()
         {
-            var db = new QLCF_DA1Context();
-            var tmp = db.FoodCategories.ToList();
+            //var db = new QLCF_DA1Context();
+            //var tmp = db.FoodCategories.ToList();
             int stt = 1;
             dgvFood.Rows.Clear();
-            dgvFood.ColumnCount = 6;
+            dgvFood.ColumnCount = 7;
             dgvFood.Columns[0].Name = "STT";
             dgvFood.Columns[1].Name = "ID món";
             dgvFood.Columns[2].Name = "Tên món";
             dgvFood.Columns[3].Name = "Tên danh mục";
             dgvFood.Columns[4].Name = "Giá";
-            dgvFood.Columns[5].Name = "Source";
+            dgvFood.Columns[5].Name = "Trạng thái";
+            dgvFood.Columns[6].Name = "Ảnh";
             foreach (var f in _foodService.GetFoodFromDB())
             {
-                var CategoryName = tmp.Where(c => c.Id == f.IdCategory).ToList()[0].Name;
-                dgvFood.Rows.Add(stt++, f.Id, f.Name, CategoryName, f.Price, f.Images);
+                var CategoryName = _categoryService.GetCategoryFromDB().Where(c => c.Id == f.IdCategory).ToList()[0].Name;
+                dgvFood.Rows.Add(stt++, f.Id, f.Name, CategoryName, f.Price, f.Status == 0 ? "Bán" : "Dừng bán", f.Images);
+
             }
         }
-
-
-        private void btnMinimize_Click(object sender, EventArgs e)
+        private void txbSearch_TextChanged(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-        }
+            int stt = 1;
+            dgvFood.Rows.Clear();
+            dgvFood.ColumnCount = 7;
+            dgvFood.Columns[0].Name = "STT";
+            dgvFood.Columns[1].Name = "ID món";
+            dgvFood.Columns[2].Name = "Tên món";
+            dgvFood.Columns[3].Name = "Tên danh mục";
+            dgvFood.Columns[4].Name = "Giá";
+            dgvFood.Columns[5].Name = "Trạng thái";
+            dgvFood.Columns[6].Name = "Ảnh";
+            var lstSearch = _foodService.GetFoodFromDB().Where(c => c.Name.ToLower().Trim().Contains(txbSearch.Text.ToLower().Trim()));
+            foreach (var f in lstSearch)
+            {
+                var CategoryName = _categoryService.GetCategoryFromDB().Where(c => c.Id == f.IdCategory).ToList()[0].Name;
+                dgvFood.Rows.Add(stt++, f.Id, f.Name, CategoryName, f.Price, f.Status == 0 ? "Bán" : "Dừng bán", f.Images);
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            }
         }
-
-        private void FormManagement_Load(object sender, EventArgs e)
-        {
-            cbCategoryFood.DataSource = _categoryService.GetCategoryFromDB().Select(c => c.Name).ToList();
-            btnEditFood.Enabled = false;
-        }
-
         private void btnOpenFile_Click(object sender, EventArgs e)
         {
             openFileDialog1 = new OpenFileDialog();
@@ -192,7 +233,51 @@ namespace _3_PL.View
 
             btnHinh.Text = openFileDialog1.FileName.Split(@"\")[5];
         }
+        private void btnEditFood_Click(object sender, EventArgs e)
+        {
+            var fc = _categoryService.GetCategoryFromDB().FirstOrDefault(c => c.Name == cbCategoryFood.Text).Id;
+            var food = _foodService.GetFoodFromDB().FirstOrDefault(c => c.Id == idClick);
 
+            if (txbFoodName.Text.Trim() == "")
+            {
+                MessageBox.Show("Tên món không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var foods = _foodService.GetFoodFromDB().ToList();
+            food.Name = txbFoodName.Text;
+            food.IdCategory = fc;
+
+            food.Price = float.Parse(nmPriceFood.Value.ToString());
+            food.Status = cbStatusFood.Text == "Bán" ? 0 : 1;
+
+            MessageBox.Show(food.Status.ToString());
+
+            food.Images = openFileDialog1.SafeFileName;
+            food.Images = btnHinh.Text;
+            //foreach (var i in foods)
+            //{
+            //    if (i.Name == txbFoodName.Text.ToLower().Trim())
+            //    {
+            //        MessageBox.Show("Món đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
+            //}
+            var db = new QLCF_DA1Context();
+
+            db.Foods.Update(food);
+            db.SaveChanges();
+
+            txbFoodName.Clear();
+            txbIDFood.Clear();
+            cbCategoryFood.SelectedIndex = 0;
+            nmPriceFood.Value = 0;
+            //cbStatusFood.SelectedIndex = 0;
+            btnEditFood.Enabled = false;
+            MessageBox.Show("Sửa thành công");
+
+
+            LoadDgvFood();
+        }
         private void dgvFood_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnEditFood.Enabled = true;
@@ -244,77 +329,45 @@ namespace _3_PL.View
                     MessageBox.Show("Tên món không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                var fc = _categoryService.GetCategoryFromDB().FirstOrDefault(c => c.Name == cbCategoryFood.Text).Id;
-                var food = new Food();
-                food.Name = txbFoodName.Text;
-
-                food.IdCategory = fc;
-
-                food.Price = float.Parse(nmPriceFood.Value.ToString());
-
-                //btnHinh.Text = openFileDialog1.SafeFileName;
-                food.Images = openFileDialog1.SafeFileName;
-                food.Images = btnHinh.Text;
-
                 var foods = _foodService.GetFoodFromDB().ToList();
                 foreach (var i in foods)
                 {
-                    if (i.Name == txbFoodName.Text.ToLower().Trim())
+                    if (i.Name.Trim().ToLower() == txbFoodName.Text.ToLower().Trim())
                     {
                         MessageBox.Show("Món đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
 
+                var fc = _categoryService.GetCategoryFromDB().FirstOrDefault(c => c.Name == cbCategoryFood.Text).Id;
+                var food = new _1_DAL.Models.Food();
+                food.Name = txbFoodName.Text;
+
+                food.IdCategory = fc;
+
+                food.Price = float.Parse(nmPriceFood.Value.ToString());
+                food.Status = 0;
+                //btnHinh.Text = openFileDialog1.SafeFileName;
+                food.Images = openFileDialog1.SafeFileName;
+                food.Images = btnHinh.Text;
 
 
-                _foodService.CreateAccount(food);
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                if (_foodService.CreateAccount(food))
+                {
+                    txbFoodName.Clear();
+                    txbIDFood.Clear();
+                    cbCategoryFood.SelectedIndex = 0;
+                    nmPriceFood.Value = 0;
+                    cbStatusFood.SelectedIndex = 0;
+                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 LoadDgvFood();
 
             }
 
         }
-
-
-        private void btnEditFood_Click(object sender, EventArgs e)
-        {
-            var fc = _categoryService.GetCategoryFromDB().FirstOrDefault(c => c.Name == cbCategoryFood.Text).Id;
-            var food = _foodService.GetFoodFromDB().FirstOrDefault(c => c.Id == idClick);
-
-            if (txbFoodName.Text.Trim() == "")
-            {
-                MessageBox.Show("Tên món không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            var foods = _foodService.GetFoodFromDB().ToList();
-            food.Name = txbFoodName.Text;
-            food.IdCategory = fc;
-
-            food.Price = float.Parse(nmPriceFood.Value.ToString());
-
-            food.Images = openFileDialog1.SafeFileName;
-            food.Images = btnHinh.Text;
-            //foreach (var i in foods)
-            //{
-            //    if (i.Name == txbFoodName.Text.ToLower().Trim())
-            //    {
-            //        MessageBox.Show("Món đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        return;
-            //    }
-            //}
-
-            _foodService.UpdateAccount(food);
-            if (_foodService.UpdateAccount(food))
-            {
-                MessageBox.Show("Sửa thành công");
-            }
-
-            LoadDgvFood();
-        }
-
+        #endregion
 
         #region Account
         public void LoadAccount()
@@ -338,6 +391,9 @@ namespace _3_PL.View
 
         private void dgvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnUpdateAccount.Enabled = true;
+            btnXoaAccount.Enabled = true;
+
             string NameWhenClick = e.RowIndex.ToString();
             int rowIndex = e.RowIndex;
 
@@ -361,7 +417,182 @@ namespace _3_PL.View
             }
 
         }
+        private void btnAddAccount_Click(object sender, EventArgs e)
+        {
+            var obj = new _1_DAL.Models.Account();
+
+            obj.UserName = tbxUser.Text;
+            if (tbxUser.Text.Trim().ToLower() == "" || tbxUser.Text.Trim().ToLower() == null)
+            {
+                MessageBox.Show("Tên tài khoản không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            obj.DisplayName = tbxDisplay.Text;
+            if (tbxDisplay.Text.Trim().ToLower() == "" || tbxDisplay.Text.Trim().ToLower() == null)
+            {
+                MessageBox.Show("Tên hiển thị không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            obj.PassWord = tbxpass.Text.Trim().ToLower();
+            if (tbxpass.Text.ToLower() == "" || tbxpass.Text.ToLower() == null)
+            {
+                MessageBox.Show("Mật khẩu không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            obj.Type = 0;
+
+
+            var account = _accountService.GetAccountFromDB().ToList();
+            foreach (var i in account)
+            {
+                if (i.UserName.ToLower().Trim() == tbxUser.Text.ToLower().Trim())
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (i.DisplayName.ToLower().Trim() == tbxDisplay.Text.ToLower().Trim())
+                {
+                    MessageBox.Show("Tên hiển thị đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            if (_accountService.CreateAccount(obj))
+            {
+                MessageBox.Show("Thêm thành công");
+            }
+            LoadAccount();
+        }
+
+        private void btnUpdateAccount_Click(object sender, EventArgs e)
+        {
+            var nameWhenClick = tbxUser.Text.Trim().ToLower();
+            var obj = _accountService.GetAccountFromDB().FirstOrDefault(c => c.UserName.Trim().ToLower() == nameWhenClick);
+
+
+
+            if (tbxUser.Text.Trim().ToLower() == "" || tbxUser.Text.Trim().ToLower() == null)
+            {
+                MessageBox.Show("Tên tài khoản không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            obj.DisplayName = tbxDisplay.Text;
+            if (tbxDisplay.Text.Trim().ToLower() == "" || tbxDisplay.Text.Trim().ToLower() == null)
+            {
+                MessageBox.Show("Tên hiển thị không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            obj.PassWord = tbxpass.Text.Trim().ToLower();
+            if (tbxpass.Text.ToLower() == "" || tbxpass.Text.ToLower() == null)
+            {
+                MessageBox.Show("Mật khẩu không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            //var account = _accountService.GetAccountFromDB().ToList();
+            //foreach (var i in account)
+            //{
+            //    if (i.DisplayName.ToLower().Trim() == tbxDisplay.Text.ToLower().Trim())
+            //    {
+            //        MessageBox.Show("Tên hiển thị đã tồn tại trong hệ thống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
+            //}
+
+            QLCF_DA1Context db = new QLCF_DA1Context();
+            db.Update(obj);
+            db.SaveChanges();
+            tbxDisplay.Clear();
+            tbxUser.Clear();
+            tbxpass.Clear();
+            tbxtype.Clear();
+            btnUpdateAccount.Enabled = false;
+            btnXoaAccount.Enabled = false;
+            MessageBox.Show("Sửa thành công");
+
+            LoadAccount();
+        }
+        private void btnXoaAccount_Click(object sender, EventArgs e)
+        {
+            var nameWhenClick = tbxUser.Text.Trim().ToLower();
+            var obj = _accountService.GetAccountFromDB().FirstOrDefault(c => c.UserName.Trim().ToLower() == nameWhenClick);
+            if (obj.Type == 1)
+            {
+                MessageBox.Show("Tài khoản không được phép xóa");
+                return;
+            }
+            if (_accountService.DeleteAccount(obj))
+            {
+                tbxDisplay.Clear();
+                tbxUser.Clear();
+                tbxpass.Clear();
+                tbxtype.Clear();
+                btnUpdateAccount.Enabled = false;
+                btnXoaAccount.Enabled = false;
+                MessageBox.Show("Xóa thành công");
+            }
+            LoadAccount();
+        }
+        private void tbxUser_TextChanged(object sender, EventArgs e)
+        {
+            btnUpdateAccount.Enabled = false;
+            btnXoaAccount.Enabled = false;
+        }
+        #endregion
+
+        #region Bills
+        public void LoadDgvBill()
+        {
+            var db = new QLCF_DA1Context();
+            DateTime dateStart = DateTime.Parse(dtpStart.Value.ToShortDateString());
+            DateTime dateEnd = DateTime.Parse(dtpEnd.Value.ToShortDateString());
+            //|| p.DateCheckOut == null
+            dgvBill.DataSource = db.Bills.Where(p => p.DateCheckIn >= dateStart && (p.DateCheckOut <= dateEnd)).Select(p => new
+            {
+                MãHóaĐơn = p.Id,
+                NgàyTạo = p.DateCheckIn,
+                TrạngThái = p.Status == 0 ? "Đã thanh toán" : "Chưa thanh toán",
+                TổngTiền = p.BillInfos.Sum(i => (double?)i.IdFoodNavigation.Price * i.Count) ?? 0,
+                GiảmGiá = p.Discount + "%",
+                TổngHóaĐơn = p.BillInfos.Sum(i => (double?)i.IdFoodNavigation.Price * i.Count) * (100 - p.Discount) / 100 ?? 0
+            }).ToList();
+
+        }
+
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDgvBill();
+        }
+
+        private void dtpEnd_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDgvBill();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            var db = new QLCF_DA1Context();
+            DateTime dateStart = DateTime.Parse(dtpStart.Value.ToShortDateString());
+            DateTime dateEnd = DateTime.Parse(dtpEnd.Value.ToShortDateString());
+
+            double sum = 0;
+            for (int i = 0; i < dgvBill.Rows.Count; i++)
+            {
+                sum += double.Parse(dgvBill.Rows[i].Cells["TổngHóaĐơn"].Value.ToString());
+                if (dgvBill.Rows[i].Cells["TrạngThái"].Value.ToString() == "Chưa thanh toán")
+                {
+                    sum = sum - double.Parse(dgvBill.Rows[i].Cells["TổngHóaĐơn"].Value.ToString());
+                }
+            }
+
+            //string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", value)
+
+            lblSoHoaDon.Text = dgvBill.Rows.Count.ToString();
+            lblTongTien.Text = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", sum) + " VNĐ";
+        }
 
         #endregion
+
     }
 }

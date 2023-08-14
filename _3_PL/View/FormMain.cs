@@ -130,8 +130,11 @@ namespace _3_PL.View
 
             if (FoodNameWhenClick != "")
             {
+                btnDiscount.Enabled = true;
+                btnExportSurplus.Enabled = true;
                 btnExportBill.Enabled = true;
                 btnExportBill.BackColor = Color.DarkGreen;
+
                 if (CurrentBill == null)
                 {
                     CurrentBill = new Bill();
@@ -247,7 +250,7 @@ namespace _3_PL.View
         {
             flowLayoutPanel1.Controls.Clear();
 
-            var tmpList = _FoodService.GetFoodFromDB().ToList();
+            var tmpList = _FoodService.GetFoodFromDB().Where(c => c.Status == 0).ToList();
 
 
             foreach (var f in tmpList)
@@ -301,7 +304,7 @@ namespace _3_PL.View
             var foodCategoryID = (from c in _CategoryService.GetCategoryFromDB()
                                   where c.Name.ToLower() == cbCategory.Text.ToLower()
                                   select c.Id).FirstOrDefault();
-            var tmpList = _FoodService.GetFoodFromDB().Where(c => c.IdCategory == foodCategoryID).ToList();
+            var tmpList = _FoodService.GetFoodFromDB().Where(c => c.IdCategory == foodCategoryID && c.Status == 0).ToList();
             if (cbCategory.Text == "Toàn bộ")
             {
                 tmpList = _FoodService.GetFoodFromDB().ToList();
@@ -372,7 +375,8 @@ namespace _3_PL.View
         private void FormMain_Load(object sender, EventArgs e)
         {
 
-
+            btnDiscount.Enabled = false;
+            btnExportSurplus.Enabled = false;
 
 
 
@@ -403,7 +407,7 @@ namespace _3_PL.View
             //var foodCategoryID = (from c in _CategoryService.GetCategoryFromDB()
             //                      where c.Name.ToLower() == cbCategory.Text.ToLower()
             //                      select c.Id).FirstOrDefault();
-            var tmpList = _FoodService.GetFoodFromDB().Where(c => c.Name.ToLower().Trim().Contains(txbSearchFood.Text.ToLower()));
+            var tmpList = _FoodService.GetFoodFromDB().Where(c => c.Name.ToLower().Trim().Contains(txbSearchFood.Text.ToLower()) && c.Status == 0);
 
             foreach (var f in tmpList)
             {
@@ -454,7 +458,12 @@ namespace _3_PL.View
                     return;
                 }
                 Regex rg = new Regex(@"[\d]");
-                if (txbDiscount.Text.ToLower().Trim() == "" && rg.IsMatch(txbDiscount.Text) == false)
+                if (rg.IsMatch(txbDiscount.Text) != true)
+                {
+                    MessageBox.Show("Vui lòng nhập đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else if (txbDiscount.Text.ToLower().Trim() == "")
                 {
                     MessageBox.Show("Không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -512,6 +521,7 @@ namespace _3_PL.View
             //        _BillService.DeleteBill(item);
             //    }
             //}
+
             if (CurrentBill == null)
             {
                 MessageBox.Show("Chưa có hóa đơn được tạo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -522,6 +532,11 @@ namespace _3_PL.View
                 $"Tổng hóa đơn: {txbTotal.Text.Split(" ")[0]} VNĐ",
                 "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
+                btnExportBill.Enabled = false;
+                btnExportBill.BackColor = Color.Gray;
+                btnExportSurplus.Enabled = false;
+                btnDiscount.Enabled = false;
+
                 CurrentBill.DateCheckOut = DateTime.Now;
                 CurrentBill.Status = 0;
                 if (txbDiscount.Text == null || txbDiscount.Text == "")
@@ -592,5 +607,35 @@ namespace _3_PL.View
 
 
 
+        private void txbDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Ngăn các ký tự đầu vào không phải là số
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txbReceived_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

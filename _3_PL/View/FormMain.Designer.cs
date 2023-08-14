@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -54,13 +54,10 @@
             pictureBox2 = new PictureBox();
             label4 = new Label();
             label5 = new Label();
-            pictureBox3 = new PictureBox();
             txbReceived = new TextBox();
             label7 = new Label();
-            pictureBox5 = new PictureBox();
             txbSurplus = new TextBox();
             label8 = new Label();
-            pictureBox6 = new PictureBox();
             txbTotal = new TextBox();
             btnPay = new CustomButton.VBButton();
             btnExportBill = new CustomButton.VBButton();
@@ -78,23 +75,26 @@
             picClock = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             pictureBox7 = new PictureBox();
-            pictureBox16 = new PictureBox();
             label6 = new Label();
             lblFoodChoice = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            pictureBox3 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBill).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             cmFood.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmNumFood).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -116,7 +116,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.ErrorImage = null;
-            pictureBox1.Location = new Point(3, 2);
+            pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(40, 31);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -127,11 +127,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(49, 10);
+            label1.Location = new Point(49, 11);
             label1.Name = "label1";
-            label1.Size = new Size(55, 20);
+            label1.Size = new Size(87, 20);
             label1.TabIndex = 3;
-            label1.Text = "Coffee";
+            label1.Text = "Bug Coffee";
             // 
             // btnClose
             // 
@@ -142,7 +142,7 @@
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Location = new Point(1654, 12);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(20, 20);
+            btnClose.Size = new Size(21, 20);
             btnClose.TabIndex = 2;
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
@@ -154,9 +154,9 @@
             btnMinimize.BackgroundImageLayout = ImageLayout.Stretch;
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.Location = new Point(1628, 12);
+            btnMinimize.Location = new Point(1627, 12);
             btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(20, 20);
+            btnMinimize.Size = new Size(21, 20);
             btnMinimize.TabIndex = 1;
             btnMinimize.UseVisualStyleBackColor = false;
             btnMinimize.Click += btnMinimize_Click;
@@ -168,9 +168,10 @@
             menuStrip1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { thôngTinTàiKhoảnToolStripMenuItem, quảnLýToolStripMenuItem, trợGiúpToolStripMenuItem });
-            menuStrip1.Location = new Point(12, 269);
+            menuStrip1.Location = new Point(11, 269);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(509, 36);
+            menuStrip1.Padding = new Padding(6, 3, 0, 3);
+            menuStrip1.Size = new Size(509, 38);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -199,52 +200,52 @@
             // 
             // dgvBill
             // 
-            dataGridViewCellStyle11.BackColor = Color.Tan;
-            dataGridViewCellStyle11.ForeColor = Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle11.SelectionForeColor = Color.Black;
-            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = Color.Tan;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBill.BackgroundColor = Color.Tan;
             dgvBill.BorderStyle = BorderStyle.None;
             dgvBill.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvBill.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.Peru;
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle12.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Peru;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = Color.Tan;
-            dataGridViewCellStyle13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle13.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
-            dgvBill.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Tan;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvBill.DefaultCellStyle = dataGridViewCellStyle3;
             dgvBill.EnableHeadersVisualStyles = false;
-            dgvBill.Location = new Point(12, 390);
+            dgvBill.Location = new Point(11, 389);
             dgvBill.Name = "dgvBill";
             dgvBill.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = Color.Tan;
-            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle14.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
-            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Tan;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvBill.RowHeadersVisible = false;
             dgvBill.RowHeadersWidth = 51;
-            dataGridViewCellStyle15.BackColor = Color.Tan;
-            dataGridViewCellStyle15.ForeColor = Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle15.SelectionForeColor = Color.Black;
-            dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.BackColor = Color.Tan;
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
+            dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvBill.RowTemplate.Height = 29;
             dgvBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvBill.Size = new Size(873, 229);
@@ -256,7 +257,7 @@
             label2.BackColor = Color.Transparent;
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(12, 347);
+            label2.Location = new Point(11, 347);
             label2.Name = "label2";
             label2.Size = new Size(56, 28);
             label2.TabIndex = 5;
@@ -288,9 +289,9 @@
             // 
             btnSearchFood.BackColor = Color.FromArgb(128, 64, 0);
             btnSearchFood.BackgroundColor = Color.FromArgb(128, 64, 0);
-            btnSearchFood.BorderColor = Color.Red;
-            btnSearchFood.BorderRadius = 15;
-            btnSearchFood.BorderSize = 0;
+            btnSearchFood.BorderColor = Color.White;
+            btnSearchFood.BorderRadius = 20;
+            btnSearchFood.BorderSize = 2;
             btnSearchFood.FlatAppearance.BorderSize = 0;
             btnSearchFood.FlatStyle = FlatStyle.Flat;
             btnSearchFood.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -307,9 +308,9 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.Transparent;
-            flowLayoutPanel1.Location = new Point(891, 390);
+            flowLayoutPanel1.Location = new Point(891, 389);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(783, 534);
+            flowLayoutPanel1.Size = new Size(783, 533);
             flowLayoutPanel1.TabIndex = 16;
             // 
             // txbDiscount
@@ -318,16 +319,18 @@
             txbDiscount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txbDiscount.Location = new Point(114, 707);
             txbDiscount.Name = "txbDiscount";
-            txbDiscount.Size = new Size(240, 34);
+            txbDiscount.Size = new Size(239, 34);
             txbDiscount.TabIndex = 18;
+            txbDiscount.KeyPress += txbDiscount_KeyPress;
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(33, 679);
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(33, 676);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(64, 62);
+            pictureBox2.Size = new Size(64, 69);
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
             // 
@@ -355,24 +358,15 @@
             label5.TabIndex = 23;
             label5.Text = "Tiền khách trả";
             // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(388, 679);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(64, 62);
-            pictureBox3.TabIndex = 22;
-            pictureBox3.TabStop = false;
-            // 
             // txbReceived
             // 
             txbReceived.BackColor = Color.Tan;
             txbReceived.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txbReceived.Location = new Point(469, 707);
             txbReceived.Name = "txbReceived";
-            txbReceived.Size = new Size(240, 34);
+            txbReceived.Size = new Size(239, 34);
             txbReceived.TabIndex = 21;
+            txbReceived.KeyPress += txbReceived_KeyPress;
             // 
             // label7
             // 
@@ -386,23 +380,14 @@
             label7.TabIndex = 29;
             label7.Text = "Tiền trả lại";
             // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(388, 824);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(64, 62);
-            pictureBox5.TabIndex = 28;
-            pictureBox5.TabStop = false;
-            // 
             // txbSurplus
             // 
             txbSurplus.BackColor = Color.Tan;
+            txbSurplus.Enabled = false;
             txbSurplus.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txbSurplus.Location = new Point(469, 852);
             txbSurplus.Name = "txbSurplus";
-            txbSurplus.Size = new Size(240, 34);
+            txbSurplus.Size = new Size(239, 34);
             txbSurplus.TabIndex = 27;
             // 
             // label8
@@ -417,16 +402,6 @@
             label8.TabIndex = 32;
             label8.Text = "Tổng tiền";
             // 
-            // pictureBox6
-            // 
-            pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(33, 824);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(64, 62);
-            pictureBox6.TabIndex = 31;
-            pictureBox6.TabStop = false;
-            // 
             // txbTotal
             // 
             txbTotal.BackColor = Color.Tan;
@@ -434,7 +409,7 @@
             txbTotal.Location = new Point(114, 852);
             txbTotal.Name = "txbTotal";
             txbTotal.ReadOnly = true;
-            txbTotal.Size = new Size(240, 34);
+            txbTotal.Size = new Size(239, 34);
             txbTotal.TabIndex = 30;
             txbTotal.TextChanged += txbTotal_TextChanged;
             // 
@@ -442,9 +417,9 @@
             // 
             btnPay.BackColor = Color.MidnightBlue;
             btnPay.BackgroundColor = Color.MidnightBlue;
-            btnPay.BorderColor = Color.Red;
-            btnPay.BorderRadius = 25;
-            btnPay.BorderSize = 0;
+            btnPay.BorderColor = Color.White;
+            btnPay.BorderRadius = 20;
+            btnPay.BorderSize = 3;
             btnPay.FlatAppearance.BorderSize = 0;
             btnPay.FlatStyle = FlatStyle.Flat;
             btnPay.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -462,14 +437,14 @@
             // 
             btnExportBill.BackColor = Color.DarkGreen;
             btnExportBill.BackgroundColor = Color.DarkGreen;
-            btnExportBill.BorderColor = Color.Red;
-            btnExportBill.BorderRadius = 25;
-            btnExportBill.BorderSize = 0;
+            btnExportBill.BorderColor = Color.White;
+            btnExportBill.BorderRadius = 20;
+            btnExportBill.BorderSize = 3;
             btnExportBill.FlatAppearance.BorderSize = 0;
             btnExportBill.FlatStyle = FlatStyle.Flat;
             btnExportBill.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnExportBill.ForeColor = Color.White;
-            btnExportBill.Location = new Point(752, 814);
+            btnExportBill.Location = new Point(752, 813);
             btnExportBill.Name = "btnExportBill";
             btnExportBill.Size = new Size(133, 52);
             btnExportBill.TabIndex = 36;
@@ -525,7 +500,7 @@
             // 
             nmNumFood.BackColor = Color.Tan;
             nmNumFood.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            nmNumFood.Location = new Point(989, 350);
+            nmNumFood.Location = new Point(989, 349);
             nmNumFood.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nmNumFood.Name = "nmNumFood";
             nmNumFood.Size = new Size(69, 34);
@@ -536,9 +511,9 @@
             // 
             btnDiscount.BackColor = Color.FromArgb(128, 64, 0);
             btnDiscount.BackgroundColor = Color.FromArgb(128, 64, 0);
-            btnDiscount.BorderColor = Color.Red;
-            btnDiscount.BorderRadius = 15;
-            btnDiscount.BorderSize = 0;
+            btnDiscount.BorderColor = Color.White;
+            btnDiscount.BorderRadius = 10;
+            btnDiscount.BorderSize = 2;
             btnDiscount.FlatAppearance.BorderSize = 0;
             btnDiscount.FlatStyle = FlatStyle.Flat;
             btnDiscount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -556,9 +531,9 @@
             // 
             btnExportSurplus.BackColor = Color.FromArgb(128, 64, 0);
             btnExportSurplus.BackgroundColor = Color.FromArgb(128, 64, 0);
-            btnExportSurplus.BorderColor = Color.Red;
-            btnExportSurplus.BorderRadius = 15;
-            btnExportSurplus.BorderSize = 0;
+            btnExportSurplus.BorderColor = Color.White;
+            btnExportSurplus.BorderRadius = 10;
+            btnExportSurplus.BorderSize = 2;
             btnExportSurplus.FlatAppearance.BorderSize = 0;
             btnExportSurplus.FlatStyle = FlatStyle.Flat;
             btnExportSurplus.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -604,7 +579,7 @@
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.ErrorImage = null;
-            pictureBox4.Location = new Point(1444, 269);
+            pictureBox4.Location = new Point(1445, 269);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(40, 56);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -615,9 +590,9 @@
             // 
             picClock.BackColor = Color.Transparent;
             picClock.BackgroundImageLayout = ImageLayout.Stretch;
-            picClock.Location = new Point(1464, 47);
+            picClock.Location = new Point(1445, 47);
             picClock.Name = "picClock";
-            picClock.Size = new Size(210, 210);
+            picClock.Size = new Size(210, 211);
             picClock.TabIndex = 44;
             picClock.TabStop = false;
             // 
@@ -629,21 +604,11 @@
             // 
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox7.Location = new Point(12, 47);
+            pictureBox7.Location = new Point(11, 47);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(225, 210);
+            pictureBox7.Size = new Size(225, 211);
             pictureBox7.TabIndex = 45;
             pictureBox7.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            pictureBox16.BackgroundImage = (Image)resources.GetObject("pictureBox16.BackgroundImage");
-            pictureBox16.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox16.Location = new Point(243, 47);
-            pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new Size(1215, 210);
-            pictureBox16.TabIndex = 54;
-            pictureBox16.TabStop = false;
             // 
             // label6
             // 
@@ -651,7 +616,7 @@
             label6.BackColor = Color.Transparent;
             label6.FlatStyle = FlatStyle.Flat;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(891, 310);
+            label6.Location = new Point(891, 309);
             label6.Name = "label6";
             label6.Size = new Size(160, 28);
             label6.TabIndex = 55;
@@ -664,11 +629,70 @@
             lblFoodChoice.FlatStyle = FlatStyle.Flat;
             lblFoodChoice.Font = new Font("Palatino Linotype", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblFoodChoice.ForeColor = Color.Green;
-            lblFoodChoice.Location = new Point(1057, 310);
+            lblFoodChoice.Location = new Point(1057, 309);
             lblFoodChoice.Name = "lblFoodChoice";
             lblFoodChoice.Size = new Size(27, 27);
             lblFoodChoice.TabIndex = 56;
             lblFoodChoice.Text = "...";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.FlatStyle = FlatStyle.Flat;
+            label9.Font = new Font("Times New Roman", 38F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.SaddleBrown;
+            label9.Location = new Point(585, 185);
+            label9.Name = "label9";
+            label9.Size = new Size(539, 73);
+            label9.TabIndex = 57;
+            label9.Text = "THÌ CÒN ĐẤY :))";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.FlatStyle = FlatStyle.Flat;
+            label10.Font = new Font("Times New Roman", 38F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.SaddleBrown;
+            label10.Location = new Point(261, 75);
+            label10.Name = "label10";
+            label10.Size = new Size(1154, 73);
+            label10.TabIndex = 58;
+            label10.Text = "THÔI ĐI NGỦ, BUG CHƯA FIX XONG";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(398, 676);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(64, 69);
+            pictureBox3.TabIndex = 59;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Location = new Point(33, 821);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(64, 69);
+            pictureBox5.TabIndex = 60;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(398, 835);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(64, 69);
+            pictureBox6.TabIndex = 61;
+            pictureBox6.TabStop = false;
             // 
             // FormMain
             // 
@@ -676,12 +700,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1686, 968);
+            ClientSize = new Size(1686, 957);
+            Controls.Add(pictureBox6);
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox3);
+            Controls.Add(label10);
+            Controls.Add(label9);
             Controls.Add(lblFoodChoice);
             Controls.Add(label6);
             Controls.Add(pictureBox7);
             Controls.Add(picClock);
-            Controls.Add(pictureBox16);
             Controls.Add(pictureBox4);
             Controls.Add(lblDisplayRole);
             Controls.Add(lblDisplayName);
@@ -692,13 +720,10 @@
             Controls.Add(label3);
             Controls.Add(btnExportBill);
             Controls.Add(label8);
-            Controls.Add(pictureBox6);
             Controls.Add(txbTotal);
             Controls.Add(label7);
-            Controls.Add(pictureBox5);
             Controls.Add(txbSurplus);
             Controls.Add(label5);
-            Controls.Add(pictureBox3);
             Controls.Add(txbReceived);
             Controls.Add(label4);
             Controls.Add(pictureBox2);
@@ -724,15 +749,14 @@
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBill).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             cmFood.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nmNumFood).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClock).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -759,13 +783,10 @@
         private PictureBox pictureBox2;
         private Label label4;
         private Label label5;
-        private PictureBox pictureBox3;
         private TextBox txbReceived;
         private Label label7;
-        private PictureBox pictureBox5;
         private TextBox txbSurplus;
         private Label label8;
-        private PictureBox pictureBox6;
         private TextBox txbTotal;
         private CustomButton.VBButton btnPay;
         private CustomButton.VBButton btnExportBill;
@@ -783,8 +804,12 @@
         private PictureBox pictureBox4;
         private PictureBox picClock;
         private PictureBox pictureBox7;
-        private PictureBox pictureBox16;
         private Label label6;
         private Label lblFoodChoice;
+        private Label label9;
+        private Label label10;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
     }
 }

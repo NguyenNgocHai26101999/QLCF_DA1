@@ -19,8 +19,7 @@ namespace _3_PL.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = "Test";
-            textBox1.Text = "Test";
+
         }
     }
 }

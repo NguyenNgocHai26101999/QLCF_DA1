@@ -15,6 +15,7 @@ namespace _1_DAL.Models
         public int IdCategory { get; set; }
         public double Price { get; set; }
         public string? Images { get; set; }
+        public int? Status { get; set; }
 
         public virtual FoodCategory IdCategoryNavigation { get; set; } = null!;
         public virtual ICollection<BillInfo> BillInfos { get; set; }

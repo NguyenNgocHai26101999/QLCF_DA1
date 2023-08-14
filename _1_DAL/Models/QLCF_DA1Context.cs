@@ -117,7 +117,7 @@ namespace _1_DAL.Models
                     .HasDefaultValueSql("(N'Chưa đặt tên')");
 
                 entity.Property(e => e.Price).HasColumnName("price");
-
+                
                 entity.HasOne(d => d.IdCategoryNavigation)
                     .WithMany(p => p.Foods)
                     .HasForeignKey(d => d.IdCategory)
