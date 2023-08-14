@@ -601,7 +601,7 @@
             // 
             picClock.BackColor = Color.Transparent;
             picClock.BackgroundImageLayout = ImageLayout.Stretch;
-            picClock.Location = new Point(1464, 48);
+            picClock.Location = new Point(1464, 47);
             picClock.Name = "picClock";
             picClock.Size = new Size(210, 211);
             picClock.TabIndex = 44;
@@ -696,10 +696,10 @@
             // p1
             // 
             p1.Image = Properties.Resources._1600x400_Highlands;
-            p1.Location = new Point(259, 47);
+            p1.Location = new Point(325, 47);
             p1.Margin = new Padding(3, 4, 3, 4);
             p1.Name = "p1";
-            p1.Size = new Size(1199, 211);
+            p1.Size = new Size(1068, 211);
             p1.SizeMode = PictureBoxSizeMode.StretchImage;
             p1.TabIndex = 62;
             p1.TabStop = false;
@@ -707,10 +707,10 @@
             // p2
             // 
             p2.Image = Properties.Resources._50ADTC_Giainhietcungnguoithuong_2432x1269;
-            p2.Location = new Point(259, 47);
+            p2.Location = new Point(325, 47);
             p2.Margin = new Padding(3, 4, 3, 4);
             p2.Name = "p2";
-            p2.Size = new Size(1199, 211);
+            p2.Size = new Size(1068, 211);
             p2.SizeMode = PictureBoxSizeMode.StretchImage;
             p2.TabIndex = 63;
             p2.TabStop = false;
@@ -718,10 +718,10 @@
             // p3
             // 
             p3.Image = Properties.Resources.image_d1853295_230524144026;
-            p3.Location = new Point(259, 47);
+            p3.Location = new Point(325, 47);
             p3.Margin = new Padding(3, 4, 3, 4);
             p3.Name = "p3";
-            p3.Size = new Size(1199, 211);
+            p3.Size = new Size(1068, 211);
             p3.SizeMode = PictureBoxSizeMode.StretchImage;
             p3.TabIndex = 64;
             p3.TabStop = false;
@@ -729,10 +729,10 @@
             // p4
             // 
             p4.Image = Properties.Resources.momo_upload_api_210524134049_637574604492504535;
-            p4.Location = new Point(259, 48);
+            p4.Location = new Point(325, 48);
             p4.Margin = new Padding(3, 4, 3, 4);
             p4.Name = "p4";
-            p4.Size = new Size(1199, 210);
+            p4.Size = new Size(1068, 210);
             p4.SizeMode = PictureBoxSizeMode.StretchImage;
             p4.TabIndex = 65;
             p4.TabStop = false;
@@ -740,17 +740,17 @@
             // p5
             // 
             p5.Image = Properties.Resources.Voucher_highlands_coffee_thang_6;
-            p5.Location = new Point(259, 47);
+            p5.Location = new Point(325, 47);
             p5.Margin = new Padding(3, 4, 3, 4);
             p5.Name = "p5";
-            p5.Size = new Size(1199, 211);
+            p5.Size = new Size(1068, 211);
             p5.SizeMode = PictureBoxSizeMode.StretchImage;
             p5.TabIndex = 66;
             p5.TabStop = false;
             // 
             // timer2
             // 
-            timer2.Interval = 5000;
+            timer2.Interval = 6000;
             timer2.Tick += timer2_Tick;
             // 
             // FormMain
