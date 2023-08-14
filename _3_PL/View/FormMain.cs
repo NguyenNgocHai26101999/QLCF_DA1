@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -586,7 +587,7 @@ namespace _3_PL.View
             txbSurplus.Text = (double.Parse(txbReceived.Text) - double.Parse(txbTotal.Text.Split(" ")[0])).ToString() + " " + "VNĐ";
             ShowBill();
         }
-        
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             picClock.BackgroundImage = GUIClock.ClockImage(400, 400);
@@ -639,7 +640,7 @@ namespace _3_PL.View
         {
             Image img = Image.FromFile(Directory.GetCurrentDirectory() + @"\IMGSDA1\" + "HeaderBill.png");
             e.Graphics.DrawImage(img, 0, 0, img.Width, img.Height);
-            e.Graphics.DrawString("Ngày: " + DateTime.Now.ToShortDateString(),new Font("Arial", 23, FontStyle.Regular),Brushes.Black,new Point(25,190));
+            e.Graphics.DrawString("Ngày: " + DateTime.Now.ToShortDateString(), new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, 190));
             var NguoiTao = DB.Accounts.Where(c => c.Status == 1).ToList()[0].DisplayName;
             e.Graphics.DrawString("Người tạo: " + NguoiTao, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, 230));
             e.Graphics.DrawString("----------------------------------------------------------------------------", new Font("Arial", 23, FontStyle.Regular), Brushes.Gray, new Point(25, 260));
@@ -647,6 +648,39 @@ namespace _3_PL.View
             e.Graphics.DrawString("SL", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(550, 290));
             e.Graphics.DrawString("Thành tiền", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, 290));
             e.Graphics.DrawString("----------------------------------------------------------------------------", new Font("Arial", 23, FontStyle.Regular), Brushes.Gray, new Point(25, 310));
+
+            int yPos = 340;
+            foreach (var f in LstBillInfo.Where(c => c.Count > 0))
+            {
+                var foodName = _FoodService.GetFoodFromDB().Where(c => c.Id == f.IdFood).ToList()[0].Name;
+                var foodPrice = _FoodService.GetFoodFromDB().Where(c => c.Id == f.IdFood).ToList()[0].Price;
+
+                e.Graphics.DrawString(foodName, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, yPos));
+                e.Graphics.DrawString(f.Count.ToString(), new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(550, yPos));
+                e.Graphics.DrawString((f.Count * foodPrice).ToString(), new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, yPos));
+
+                yPos += 50;
+            }
+            e.Graphics.DrawString("----------------------------------------------------------------------------", new Font("Arial", 23, FontStyle.Regular), Brushes.Gray, new Point(25, yPos));
+            e.Graphics.DrawString("Tổng cộng", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, yPos + 50));
+            double totalPrice1 = 0;
+            foreach (var item in CurrentBillInfo)
+            {
+                var food1 = DB.Foods.Find(item.IdFood);
+                totalPrice1 += item.Count * food1.Price;
+            }
+            e.Graphics.DrawString(totalPrice1.ToString(), new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, yPos + 50));
+
+            e.Graphics.DrawString("Giảm giá", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, yPos + 100));
+            e.Graphics.DrawString(txbDiscount.Text + " %", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, yPos + 100));
+
+            var temp = (double.Parse(txbTotal.Text.Split(" ")[0])).ToString();
+            temp = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", double.Parse(temp)) + "  ₫";
+            
+            e.Graphics.DrawString("Thanh toán", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, yPos + 150));
+            e.Graphics.DrawString(temp, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, yPos + 150));
+
+            e.Graphics.DrawString("Thankyou, See you again", new Font("Arial", 25, FontStyle.Regular), Brushes.Peru, new Point(250, yPos + 200));
         }
         private void btnExportBill_Click(object sender, EventArgs e)
         {
