@@ -81,9 +81,9 @@
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(49, 10);
             label1.Name = "label1";
-            label1.Size = new Size(63, 23);
+            label1.Size = new Size(168, 23);
             label1.TabIndex = 3;
-            label1.Text = "Coffee";
+            label1.Text = "Thông tin tài khoản";
             // 
             // btnClose
             // 
@@ -120,7 +120,7 @@
             label2.FlatStyle = FlatStyle.Flat;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(64, 0, 0);
-            label2.Location = new Point(35, 64);
+            label2.Location = new Point(54, 91);
             label2.Name = "label2";
             label2.Size = new Size(140, 28);
             label2.TabIndex = 4;
@@ -133,7 +133,7 @@
             label3.FlatStyle = FlatStyle.Flat;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(64, 0, 0);
-            label3.Location = new Point(35, 134);
+            label3.Location = new Point(54, 161);
             label3.Name = "label3";
             label3.Size = new Size(124, 28);
             label3.TabIndex = 5;
@@ -146,7 +146,7 @@
             label4.FlatStyle = FlatStyle.Flat;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(64, 0, 0);
-            label4.Location = new Point(35, 288);
+            label4.Location = new Point(54, 315);
             label4.Name = "label4";
             label4.Size = new Size(145, 28);
             label4.TabIndex = 6;
@@ -159,7 +159,7 @@
             label5.FlatStyle = FlatStyle.Flat;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(64, 0, 0);
-            label5.Location = new Point(35, 216);
+            label5.Location = new Point(54, 243);
             label5.Name = "label5";
             label5.Size = new Size(102, 28);
             label5.TabIndex = 5;
@@ -172,7 +172,7 @@
             label6.FlatStyle = FlatStyle.Flat;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(64, 0, 0);
-            label6.Location = new Point(35, 362);
+            label6.Location = new Point(54, 389);
             label6.Name = "label6";
             label6.Size = new Size(92, 28);
             label6.TabIndex = 7;
@@ -185,7 +185,7 @@
             lblUserName.FlatStyle = FlatStyle.Flat;
             lblUserName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblUserName.ForeColor = Color.FromArgb(64, 0, 0);
-            lblUserName.Location = new Point(196, 64);
+            lblUserName.Location = new Point(215, 91);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(116, 28);
             lblUserName.TabIndex = 8;
@@ -198,7 +198,7 @@
             lblDisplayName.FlatStyle = FlatStyle.Flat;
             lblDisplayName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblDisplayName.ForeColor = Color.FromArgb(64, 0, 0);
-            lblDisplayName.Location = new Point(196, 134);
+            lblDisplayName.Location = new Point(215, 161);
             lblDisplayName.Name = "lblDisplayName";
             lblDisplayName.Size = new Size(144, 28);
             lblDisplayName.TabIndex = 9;
@@ -208,7 +208,7 @@
             // 
             tbxpass.BackColor = Color.Tan;
             tbxpass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxpass.Location = new Point(196, 216);
+            tbxpass.Location = new Point(215, 243);
             tbxpass.Name = "tbxpass";
             tbxpass.Size = new Size(240, 34);
             tbxpass.TabIndex = 22;
@@ -217,7 +217,7 @@
             // 
             tbxrepass.BackColor = Color.Tan;
             tbxrepass.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxrepass.Location = new Point(196, 288);
+            tbxrepass.Location = new Point(215, 315);
             tbxrepass.Name = "tbxrepass";
             tbxrepass.PasswordChar = '*';
             tbxrepass.Size = new Size(240, 34);
@@ -227,7 +227,7 @@
             // 
             tbxrepass2.BackColor = Color.Tan;
             tbxrepass2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tbxrepass2.Location = new Point(196, 362);
+            tbxrepass2.Location = new Point(215, 389);
             tbxrepass2.Name = "tbxrepass2";
             tbxrepass2.PasswordChar = '*';
             tbxrepass2.Size = new Size(240, 34);
@@ -237,9 +237,9 @@
             // 
             btnChange.BackColor = Color.FromArgb(128, 64, 0);
             btnChange.BackgroundColor = Color.FromArgb(128, 64, 0);
-            btnChange.BorderColor = Color.Red;
-            btnChange.BorderRadius = 25;
-            btnChange.BorderSize = 0;
+            btnChange.BorderColor = Color.White;
+            btnChange.BorderRadius = 20;
+            btnChange.BorderSize = 3;
             btnChange.FlatAppearance.BorderSize = 0;
             btnChange.FlatStyle = FlatStyle.Flat;
             btnChange.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);

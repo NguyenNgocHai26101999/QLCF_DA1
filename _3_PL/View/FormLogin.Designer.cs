@@ -80,9 +80,9 @@
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(49, 10);
             label1.Name = "label1";
-            label1.Size = new Size(63, 23);
+            label1.Size = new Size(100, 23);
             label1.TabIndex = 3;
-            label1.Text = "Coffee";
+            label1.Text = "Bug Coffee";
             // 
             // btnClose
             // 
@@ -217,9 +217,9 @@
             // 
             btnLogin.BackColor = Color.FromArgb(128, 64, 0);
             btnLogin.BackgroundColor = Color.FromArgb(128, 64, 0);
-            btnLogin.BorderColor = Color.Red;
-            btnLogin.BorderRadius = 25;
-            btnLogin.BorderSize = 0;
+            btnLogin.BorderColor = Color.White;
+            btnLogin.BorderRadius = 20;
+            btnLogin.BorderSize = 3;
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
