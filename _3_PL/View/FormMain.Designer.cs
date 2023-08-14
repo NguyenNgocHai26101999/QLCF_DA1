@@ -750,7 +750,7 @@
             // 
             // timer2
             // 
-            timer2.Interval = 3000;
+            timer2.Interval = 5000;
             timer2.Tick += timer2_Tick;
             // 
             // FormMain
