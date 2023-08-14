@@ -77,8 +77,6 @@
             pictureBox7 = new PictureBox();
             label6 = new Label();
             lblFoodChoice = new Label();
-            label9 = new Label();
-            label10 = new Label();
             pictureBox3 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
@@ -637,32 +635,6 @@
             lblFoodChoice.TabIndex = 56;
             lblFoodChoice.Text = "...";
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.FlatStyle = FlatStyle.Flat;
-            label9.Font = new Font("Times New Roman", 38F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.SaddleBrown;
-            label9.Location = new Point(585, 185);
-            label9.Name = "label9";
-            label9.Size = new Size(539, 73);
-            label9.TabIndex = 57;
-            label9.Text = "THÌ CÒN ĐẤY :))";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
-            label10.FlatStyle = FlatStyle.Flat;
-            label10.Font = new Font("Times New Roman", 38F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.SaddleBrown;
-            label10.Location = new Point(261, 75);
-            label10.Name = "label10";
-            label10.Size = new Size(1154, 73);
-            label10.TabIndex = 58;
-            label10.Text = "THÔI ĐI NGỦ, BUG CHƯA FIX XONG";
-            // 
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
@@ -720,8 +692,6 @@
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
             Controls.Add(pictureBox3);
-            Controls.Add(label10);
-            Controls.Add(label9);
             Controls.Add(lblFoodChoice);
             Controls.Add(label6);
             Controls.Add(pictureBox7);
@@ -822,8 +792,6 @@
         private PictureBox pictureBox7;
         private Label label6;
         private Label lblFoodChoice;
-        private Label label9;
-        private Label label10;
         private PictureBox pictureBox3;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
