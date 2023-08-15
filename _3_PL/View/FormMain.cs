@@ -380,7 +380,7 @@ namespace _3_PL.View
             btnExportSurplus.Enabled = false;
 
 
-
+            timer2.Start();
             timer1.Start();
 
             var CurrentAcc = _AccountService.GetAccountFromDB().FirstOrDefault(a => a.Status == 1);
@@ -676,16 +676,54 @@ namespace _3_PL.View
 
             var temp = (double.Parse(txbTotal.Text.Split(" ")[0])).ToString();
             temp = string.Format(new CultureInfo("vi-VN"), "{0:#,##0.00}", double.Parse(temp)) + "  ₫";
-            
+
             e.Graphics.DrawString("Thanh toán", new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(25, yPos + 150));
             e.Graphics.DrawString(temp, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, yPos + 150));
 
             e.Graphics.DrawString("Thankyou, See you again", new Font("Arial", 25, FontStyle.Regular), Brushes.Peru, new Point(250, yPos + 200));
+            
+            e.Graphics.DrawString("Mã hóa đơn: " + CurrentBill.Id, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(250, yPos + 250));
+
         }
         private void btnExportBill_Click(object sender, EventArgs e)
         {
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (p1.Visible == true)
+            {
+                p1.Visible = false;
+                p2.Visible = true;
+            }
+            else if (p2.Visible == true)
+            {
+                p2.Visible = false;
+                p3.Visible = true;
+            }
+            else if (p3.Visible == true)
+            {
+                p3.Visible = false;
+                p4.Visible = true;
+            }
+            else if (p4.Visible == true)
+            {
+                p4.Visible = false;
+                p5.Visible = true;
+            }
+            else if (p5.Visible == true)
+            {
+                p5.Visible = false;
+                p1.Visible = true;
+            }
+        }
+
+        private void lịchSửHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new FormHistory();
+            f.ShowDialog();
         }
     }
 }

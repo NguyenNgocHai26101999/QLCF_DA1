@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormManagement));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle19 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle20 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -49,6 +49,7 @@
             panel2 = new Panel();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            label7 = new Label();
             label18 = new Label();
             txbSearch = new TextBox();
             nmPriceFood = new NumericUpDown();
@@ -103,7 +104,6 @@
             dgvBill = new DataGridView();
             openFileDialog1 = new OpenFileDialog();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -129,8 +129,9 @@
             panel1.Controls.Add(btnMinimize);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1161, 41);
+            panel1.Size = new Size(1016, 31);
             panel1.TabIndex = 2;
             // 
             // pictureBox1
@@ -139,9 +140,10 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.ErrorImage = null;
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(3, 2);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 31);
+            pictureBox1.Size = new Size(35, 23);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -150,9 +152,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(49, 11);
+            label1.Location = new Point(43, 8);
             label1.Name = "label1";
-            label1.Size = new Size(130, 20);
+            label1.Size = new Size(101, 15);
             label1.TabIndex = 3;
             label1.Text = "Quản lý cửa hàng";
             // 
@@ -163,9 +165,10 @@
             btnClose.BackgroundImageLayout = ImageLayout.Stretch;
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Location = new Point(1125, 11);
+            btnClose.Location = new Point(984, 8);
+            btnClose.Margin = new Padding(3, 2, 3, 2);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(21, 20);
+            btnClose.Size = new Size(18, 15);
             btnClose.TabIndex = 2;
             btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
@@ -177,9 +180,10 @@
             btnMinimize.BackgroundImageLayout = ImageLayout.Stretch;
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.Location = new Point(1099, 11);
+            btnMinimize.Location = new Point(962, 8);
+            btnMinimize.Margin = new Padding(3, 2, 3, 2);
             btnMinimize.Name = "btnMinimize";
-            btnMinimize.Size = new Size(21, 20);
+            btnMinimize.Size = new Size(18, 15);
             btnMinimize.TabIndex = 1;
             btnMinimize.UseVisualStyleBackColor = false;
             btnMinimize.Click += btnMinimize_Click;
@@ -188,9 +192,10 @@
             // 
             panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(tabControl1);
-            panel2.Location = new Point(3, 47);
+            panel2.Location = new Point(3, 35);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1146, 693);
+            panel2.Size = new Size(1003, 520);
             panel2.TabIndex = 3;
             // 
             // tabControl1
@@ -199,10 +204,11 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
-            tabControl1.Location = new Point(9, 0);
+            tabControl1.Location = new Point(8, 0);
+            tabControl1.Margin = new Padding(3, 2, 3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1134, 690);
+            tabControl1.Size = new Size(992, 518);
             tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -229,30 +235,42 @@
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(picFood);
-            tabPage1.Location = new Point(4, 29);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(3, 2, 3, 2);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1126, 657);
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.Size = new Size(984, 490);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Món";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(388, 134);
+            label7.Name = "label7";
+            label7.Size = new Size(63, 21);
+            label7.TabIndex = 46;
+            label7.Text = "Tên ảnh";
             // 
             // label18
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(8, 305);
+            label18.Location = new Point(7, 229);
             label18.Name = "label18";
-            label18.Size = new Size(91, 28);
+            label18.Size = new Size(74, 21);
             label18.TabIndex = 45;
             label18.Text = "Tìm kiếm";
             // 
             // txbSearch
             // 
             txbSearch.BackColor = Color.Tan;
-            txbSearch.Location = new Point(105, 309);
+            txbSearch.Location = new Point(92, 232);
+            txbSearch.Margin = new Padding(3, 2, 3, 2);
             txbSearch.Name = "txbSearch";
             txbSearch.PlaceholderText = "Tìm kiếm gần đúng theo tên món";
-            txbSearch.Size = new Size(477, 27);
+            txbSearch.Size = new Size(418, 23);
             txbSearch.TabIndex = 44;
             txbSearch.TextChanged += txbSearch_TextChanged;
             // 
@@ -260,10 +278,11 @@
             // 
             nmPriceFood.BackColor = Color.Tan;
             nmPriceFood.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nmPriceFood.Location = new Point(538, 47);
+            nmPriceFood.Location = new Point(471, 35);
+            nmPriceFood.Margin = new Padding(3, 2, 3, 2);
             nmPriceFood.Maximum = new decimal(new int[] { -402653185, -1613725636, 54210108, 0 });
             nmPriceFood.Name = "nmPriceFood";
-            nmPriceFood.Size = new Size(246, 27);
+            nmPriceFood.Size = new Size(215, 23);
             nmPriceFood.TabIndex = 43;
             // 
             // dgvFood
@@ -271,39 +290,40 @@
             dgvFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvFood.BackgroundColor = Color.Tan;
             dgvFood.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Peru;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = Color.Peru;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = Color.Black;
+            dataGridViewCellStyle16.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle16.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            dgvFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             dgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Tan;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvFood.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = Color.Tan;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle17.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
+            dgvFood.DefaultCellStyle = dataGridViewCellStyle17;
             dgvFood.EnableHeadersVisualStyles = false;
-            dgvFood.Location = new Point(8, 345);
+            dgvFood.Location = new Point(7, 259);
+            dgvFood.Margin = new Padding(3, 2, 3, 2);
             dgvFood.Name = "dgvFood";
             dgvFood.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Tan;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvFood.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.Tan;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle18.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            dgvFood.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             dgvFood.RowHeadersWidth = 51;
             dgvFood.RowTemplate.Height = 29;
             dgvFood.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvFood.Size = new Size(1112, 306);
+            dgvFood.Size = new Size(973, 230);
             dgvFood.TabIndex = 42;
             dgvFood.CellClick += dgvFood_CellClick;
             // 
@@ -318,9 +338,10 @@
             btnHinh.FlatStyle = FlatStyle.Flat;
             btnHinh.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnHinh.ForeColor = Color.Black;
-            btnHinh.Location = new Point(538, 178);
+            btnHinh.Location = new Point(471, 134);
+            btnHinh.Margin = new Padding(3, 2, 3, 2);
             btnHinh.Name = "btnHinh";
-            btnHinh.Size = new Size(246, 28);
+            btnHinh.Size = new Size(215, 21);
             btnHinh.TabIndex = 41;
             btnHinh.TextColor = Color.Black;
             btnHinh.UseVisualStyleBackColor = false;
@@ -330,15 +351,16 @@
             btnEditFood.BackColor = Color.FromArgb(128, 64, 0);
             btnEditFood.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnEditFood.BorderColor = Color.White;
-            btnEditFood.BorderRadius = 20;
+            btnEditFood.BorderRadius = 10;
             btnEditFood.BorderSize = 3;
             btnEditFood.FlatAppearance.BorderSize = 0;
             btnEditFood.FlatStyle = FlatStyle.Flat;
             btnEditFood.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEditFood.ForeColor = Color.White;
-            btnEditFood.Location = new Point(538, 243);
+            btnEditFood.Location = new Point(471, 182);
+            btnEditFood.Margin = new Padding(3, 2, 3, 2);
             btnEditFood.Name = "btnEditFood";
-            btnEditFood.Size = new Size(88, 40);
+            btnEditFood.Size = new Size(77, 30);
             btnEditFood.TabIndex = 36;
             btnEditFood.Text = "Sửa";
             btnEditFood.TextColor = Color.White;
@@ -350,15 +372,16 @@
             btnAddFood.BackColor = Color.FromArgb(128, 64, 0);
             btnAddFood.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnAddFood.BorderColor = Color.White;
-            btnAddFood.BorderRadius = 20;
+            btnAddFood.BorderRadius = 10;
             btnAddFood.BorderSize = 3;
             btnAddFood.FlatAppearance.BorderSize = 0;
             btnAddFood.FlatStyle = FlatStyle.Flat;
             btnAddFood.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddFood.ForeColor = Color.White;
-            btnAddFood.Location = new Point(444, 242);
+            btnAddFood.Location = new Point(388, 182);
+            btnAddFood.Margin = new Padding(3, 2, 3, 2);
             btnAddFood.Name = "btnAddFood";
-            btnAddFood.Size = new Size(88, 40);
+            btnAddFood.Size = new Size(77, 30);
             btnAddFood.TabIndex = 35;
             btnAddFood.Text = "Thêm";
             btnAddFood.TextColor = Color.White;
@@ -370,15 +393,16 @@
             btnOpenFile.BackColor = Color.Gold;
             btnOpenFile.BackgroundColor = Color.Gold;
             btnOpenFile.BorderColor = Color.Black;
-            btnOpenFile.BorderRadius = 15;
+            btnOpenFile.BorderRadius = 10;
             btnOpenFile.BorderSize = 3;
             btnOpenFile.FlatAppearance.BorderSize = 0;
             btnOpenFile.FlatStyle = FlatStyle.Flat;
             btnOpenFile.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnOpenFile.ForeColor = Color.Black;
-            btnOpenFile.Location = new Point(1033, 304);
+            btnOpenFile.Location = new Point(904, 228);
+            btnOpenFile.Margin = new Padding(3, 2, 3, 2);
             btnOpenFile.Name = "btnOpenFile";
-            btnOpenFile.Size = new Size(87, 35);
+            btnOpenFile.Size = new Size(76, 26);
             btnOpenFile.TabIndex = 34;
             btnOpenFile.Text = "Chọn ảnh";
             btnOpenFile.TextColor = Color.Black;
@@ -389,45 +413,49 @@
             // 
             cbStatusFood.BackColor = Color.Tan;
             cbStatusFood.FormattingEnabled = true;
-            cbStatusFood.Location = new Point(538, 108);
+            cbStatusFood.Location = new Point(471, 81);
+            cbStatusFood.Margin = new Padding(3, 2, 3, 2);
             cbStatusFood.Name = "cbStatusFood";
-            cbStatusFood.Size = new Size(246, 28);
+            cbStatusFood.Size = new Size(216, 23);
             cbStatusFood.TabIndex = 23;
             // 
             // cbCategoryFood
             // 
             cbCategoryFood.BackColor = Color.Tan;
             cbCategoryFood.FormattingEnabled = true;
-            cbCategoryFood.Location = new Point(135, 179);
+            cbCategoryFood.Location = new Point(118, 134);
+            cbCategoryFood.Margin = new Padding(3, 2, 3, 2);
             cbCategoryFood.Name = "cbCategoryFood";
-            cbCategoryFood.Size = new Size(281, 28);
+            cbCategoryFood.Size = new Size(246, 23);
             cbCategoryFood.TabIndex = 21;
             cbCategoryFood.Text = "Danh mục";
             // 
             // txbFoodName
             // 
             txbFoodName.BackColor = Color.Tan;
-            txbFoodName.Location = new Point(135, 108);
+            txbFoodName.Location = new Point(118, 81);
+            txbFoodName.Margin = new Padding(3, 2, 3, 2);
             txbFoodName.Name = "txbFoodName";
-            txbFoodName.Size = new Size(281, 27);
+            txbFoodName.Size = new Size(246, 23);
             txbFoodName.TabIndex = 20;
             // 
             // txbIDFood
             // 
             txbIDFood.BackColor = Color.Tan;
-            txbIDFood.Location = new Point(135, 47);
+            txbIDFood.Location = new Point(118, 35);
+            txbIDFood.Margin = new Padding(3, 2, 3, 2);
             txbIDFood.Name = "txbIDFood";
             txbIDFood.ReadOnly = true;
-            txbIDFood.Size = new Size(281, 27);
+            txbIDFood.Size = new Size(246, 23);
             txbIDFood.TabIndex = 19;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(432, 108);
+            label6.Location = new Point(378, 81);
             label6.Name = "label6";
-            label6.Size = new Size(98, 28);
+            label6.Size = new Size(79, 21);
             label6.TabIndex = 6;
             label6.Text = "Trạng thái";
             // 
@@ -435,9 +463,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(490, 47);
+            label5.Location = new Point(429, 35);
             label5.Name = "label5";
-            label5.Size = new Size(41, 28);
+            label5.Size = new Size(33, 21);
             label5.TabIndex = 5;
             label5.Text = "Giá";
             // 
@@ -445,9 +473,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(29, 179);
+            label4.Location = new Point(25, 134);
             label4.Name = "label4";
-            label4.Size = new Size(100, 28);
+            label4.Size = new Size(81, 21);
             label4.TabIndex = 4;
             label4.Text = "Danh mục";
             // 
@@ -455,9 +483,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(43, 108);
+            label3.Location = new Point(38, 81);
             label3.Name = "label3";
-            label3.Size = new Size(86, 28);
+            label3.Size = new Size(69, 21);
             label3.TabIndex = 3;
             label3.Text = "Tên món";
             // 
@@ -465,9 +493,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(98, 48);
+            label2.Location = new Point(86, 36);
             label2.Name = "label2";
-            label2.Size = new Size(31, 28);
+            label2.Size = new Size(25, 21);
             label2.TabIndex = 2;
             label2.Text = "ID";
             // 
@@ -475,9 +503,10 @@
             // 
             picFood.BackgroundImageLayout = ImageLayout.Stretch;
             picFood.BorderStyle = BorderStyle.Fixed3D;
-            picFood.Location = new Point(831, 6);
+            picFood.Location = new Point(727, 4);
+            picFood.Margin = new Padding(3, 2, 3, 2);
             picFood.Name = "picFood";
-            picFood.Size = new Size(289, 292);
+            picFood.Size = new Size(253, 220);
             picFood.TabIndex = 1;
             picFood.TabStop = false;
             // 
@@ -493,10 +522,11 @@
             tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(dgvCategoryFood);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Margin = new Padding(3, 2, 3, 2);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1126, 657);
+            tabPage2.Padding = new Padding(3, 2, 3, 2);
+            tabPage2.Size = new Size(984, 490);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Danh mục món";
             tabPage2.UseVisualStyleBackColor = true;
@@ -506,15 +536,16 @@
             btnEditCa.BackColor = Color.FromArgb(128, 64, 0);
             btnEditCa.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnEditCa.BorderColor = Color.White;
-            btnEditCa.BorderRadius = 20;
+            btnEditCa.BorderRadius = 10;
             btnEditCa.BorderSize = 3;
             btnEditCa.FlatAppearance.BorderSize = 0;
             btnEditCa.FlatStyle = FlatStyle.Flat;
             btnEditCa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnEditCa.ForeColor = Color.White;
-            btnEditCa.Location = new Point(549, 97);
+            btnEditCa.Location = new Point(480, 73);
+            btnEditCa.Margin = new Padding(3, 2, 3, 2);
             btnEditCa.Name = "btnEditCa";
-            btnEditCa.Size = new Size(88, 40);
+            btnEditCa.Size = new Size(77, 30);
             btnEditCa.TabIndex = 50;
             btnEditCa.Text = "Sửa";
             btnEditCa.TextColor = Color.White;
@@ -526,15 +557,16 @@
             btnAddCa.BackColor = Color.FromArgb(128, 64, 0);
             btnAddCa.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnAddCa.BorderColor = Color.White;
-            btnAddCa.BorderRadius = 20;
+            btnAddCa.BorderRadius = 10;
             btnAddCa.BorderSize = 3;
             btnAddCa.FlatAppearance.BorderSize = 0;
             btnAddCa.FlatStyle = FlatStyle.Flat;
             btnAddCa.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddCa.ForeColor = Color.White;
-            btnAddCa.Location = new Point(456, 96);
+            btnAddCa.Location = new Point(399, 72);
+            btnAddCa.Margin = new Padding(3, 2, 3, 2);
             btnAddCa.Name = "btnAddCa";
-            btnAddCa.Size = new Size(88, 40);
+            btnAddCa.Size = new Size(77, 30);
             btnAddCa.TabIndex = 49;
             btnAddCa.Text = "Thêm";
             btnAddCa.TextColor = Color.White;
@@ -544,27 +576,29 @@
             // txbNameCategory
             // 
             txbNameCategory.BackColor = Color.Tan;
-            txbNameCategory.Location = new Point(644, 38);
+            txbNameCategory.Location = new Point(564, 28);
+            txbNameCategory.Margin = new Padding(3, 2, 3, 2);
             txbNameCategory.Name = "txbNameCategory";
-            txbNameCategory.Size = new Size(281, 27);
+            txbNameCategory.Size = new Size(246, 23);
             txbNameCategory.TabIndex = 48;
             // 
             // txbIDFCategory
             // 
             txbIDFCategory.BackColor = Color.Tan;
-            txbIDFCategory.Location = new Point(191, 38);
+            txbIDFCategory.Location = new Point(167, 28);
+            txbIDFCategory.Margin = new Padding(3, 2, 3, 2);
             txbIDFCategory.Name = "txbIDFCategory";
             txbIDFCategory.ReadOnly = true;
-            txbIDFCategory.Size = new Size(281, 27);
+            txbIDFCategory.Size = new Size(246, 23);
             txbIDFCategory.TabIndex = 47;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(559, 38);
+            label9.Location = new Point(489, 28);
             label9.Name = "label9";
-            label9.Size = new Size(78, 28);
+            label9.Size = new Size(62, 21);
             label9.TabIndex = 46;
             label9.Text = "Tên DM";
             // 
@@ -572,9 +606,9 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(154, 38);
+            label10.Location = new Point(135, 28);
             label10.Name = "label10";
-            label10.Size = new Size(31, 28);
+            label10.Size = new Size(25, 21);
             label10.TabIndex = 45;
             label10.Text = "ID";
             // 
@@ -582,9 +616,9 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(6, 151);
+            label8.Location = new Point(5, 113);
             label8.Name = "label8";
-            label8.Size = new Size(192, 28);
+            label8.Size = new Size(155, 21);
             label8.TabIndex = 44;
             label8.Text = "Danh sách danh mục";
             // 
@@ -593,39 +627,40 @@
             dgvCategoryFood.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCategoryFood.BackgroundColor = Color.Tan;
             dgvCategoryFood.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.Peru;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvCategoryFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = Color.Peru;
+            dataGridViewCellStyle19.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle19.ForeColor = Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle19.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle19.WrapMode = DataGridViewTriState.True;
+            dgvCategoryFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             dgvCategoryFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Tan;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvCategoryFood.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = Color.Tan;
+            dataGridViewCellStyle20.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle20.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle20.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle20.WrapMode = DataGridViewTriState.False;
+            dgvCategoryFood.DefaultCellStyle = dataGridViewCellStyle20;
             dgvCategoryFood.EnableHeadersVisualStyles = false;
-            dgvCategoryFood.Location = new Point(6, 182);
+            dgvCategoryFood.Location = new Point(5, 136);
+            dgvCategoryFood.Margin = new Padding(3, 2, 3, 2);
             dgvCategoryFood.Name = "dgvCategoryFood";
             dgvCategoryFood.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.Tan;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvCategoryFood.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = Color.Tan;
+            dataGridViewCellStyle21.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle21.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle21.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle21.WrapMode = DataGridViewTriState.True;
+            dgvCategoryFood.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             dgvCategoryFood.RowHeadersWidth = 51;
             dgvCategoryFood.RowTemplate.Height = 29;
             dgvCategoryFood.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCategoryFood.Size = new Size(1114, 469);
+            dgvCategoryFood.Size = new Size(975, 352);
             dgvCategoryFood.TabIndex = 43;
             dgvCategoryFood.CellClick += dgvCategoryFood_CellClick;
             // 
@@ -646,9 +681,10 @@
             tabPage3.Controls.Add(label12);
             tabPage3.Controls.Add(label13);
             tabPage3.Controls.Add(dgvAccount);
-            tabPage3.Location = new Point(4, 29);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Margin = new Padding(3, 2, 3, 2);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1126, 657);
+            tabPage3.Size = new Size(984, 490);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Tài khoản";
             tabPage3.UseVisualStyleBackColor = true;
@@ -656,10 +692,11 @@
             // tbxtype
             // 
             tbxtype.BackColor = Color.Tan;
-            tbxtype.Location = new Point(761, 83);
+            tbxtype.Location = new Point(666, 62);
+            tbxtype.Margin = new Padding(3, 2, 3, 2);
             tbxtype.Name = "tbxtype";
             tbxtype.ReadOnly = true;
-            tbxtype.Size = new Size(281, 27);
+            tbxtype.Size = new Size(246, 23);
             tbxtype.TabIndex = 65;
             // 
             // btnXoaAccount
@@ -667,15 +704,16 @@
             btnXoaAccount.BackColor = Color.FromArgb(128, 64, 0);
             btnXoaAccount.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnXoaAccount.BorderColor = Color.White;
-            btnXoaAccount.BorderRadius = 20;
+            btnXoaAccount.BorderRadius = 10;
             btnXoaAccount.BorderSize = 3;
             btnXoaAccount.FlatAppearance.BorderSize = 0;
             btnXoaAccount.FlatStyle = FlatStyle.Flat;
             btnXoaAccount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnXoaAccount.ForeColor = Color.White;
-            btnXoaAccount.Location = new Point(607, 144);
+            btnXoaAccount.Location = new Point(531, 108);
+            btnXoaAccount.Margin = new Padding(3, 2, 3, 2);
             btnXoaAccount.Name = "btnXoaAccount";
-            btnXoaAccount.Size = new Size(88, 40);
+            btnXoaAccount.Size = new Size(77, 30);
             btnXoaAccount.TabIndex = 64;
             btnXoaAccount.Text = "Xóa";
             btnXoaAccount.TextColor = Color.White;
@@ -686,9 +724,9 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(607, 79);
+            label15.Location = new Point(531, 59);
             label15.Name = "label15";
-            label15.Size = new Size(134, 28);
+            label15.Size = new Size(107, 21);
             label15.TabIndex = 62;
             label15.Text = "Loại tài khoản";
             // 
@@ -696,18 +734,19 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(607, 21);
+            label14.Location = new Point(531, 16);
             label14.Name = "label14";
-            label14.Size = new Size(94, 28);
+            label14.Size = new Size(75, 21);
             label14.TabIndex = 61;
             label14.Text = "Mật khẩu";
             // 
             // tbxpass
             // 
             tbxpass.BackColor = Color.Tan;
-            tbxpass.Location = new Point(761, 21);
+            tbxpass.Location = new Point(666, 16);
+            tbxpass.Margin = new Padding(3, 2, 3, 2);
             tbxpass.Name = "tbxpass";
-            tbxpass.Size = new Size(281, 27);
+            tbxpass.Size = new Size(246, 23);
             tbxpass.TabIndex = 59;
             // 
             // btnUpdateAccount
@@ -715,15 +754,16 @@
             btnUpdateAccount.BackColor = Color.FromArgb(128, 64, 0);
             btnUpdateAccount.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnUpdateAccount.BorderColor = Color.White;
-            btnUpdateAccount.BorderRadius = 20;
+            btnUpdateAccount.BorderRadius = 10;
             btnUpdateAccount.BorderSize = 3;
             btnUpdateAccount.FlatAppearance.BorderSize = 0;
             btnUpdateAccount.FlatStyle = FlatStyle.Flat;
             btnUpdateAccount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnUpdateAccount.ForeColor = Color.White;
-            btnUpdateAccount.Location = new Point(513, 144);
+            btnUpdateAccount.Location = new Point(449, 108);
+            btnUpdateAccount.Margin = new Padding(3, 2, 3, 2);
             btnUpdateAccount.Name = "btnUpdateAccount";
-            btnUpdateAccount.Size = new Size(88, 40);
+            btnUpdateAccount.Size = new Size(77, 30);
             btnUpdateAccount.TabIndex = 58;
             btnUpdateAccount.Text = "Sửa";
             btnUpdateAccount.TextColor = Color.White;
@@ -735,15 +775,16 @@
             btnAddAccount.BackColor = Color.FromArgb(128, 64, 0);
             btnAddAccount.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnAddAccount.BorderColor = Color.White;
-            btnAddAccount.BorderRadius = 20;
+            btnAddAccount.BorderRadius = 10;
             btnAddAccount.BorderSize = 3;
             btnAddAccount.FlatAppearance.BorderSize = 0;
             btnAddAccount.FlatStyle = FlatStyle.Flat;
             btnAddAccount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnAddAccount.ForeColor = Color.White;
-            btnAddAccount.Location = new Point(419, 144);
+            btnAddAccount.Location = new Point(367, 108);
+            btnAddAccount.Margin = new Padding(3, 2, 3, 2);
             btnAddAccount.Name = "btnAddAccount";
-            btnAddAccount.Size = new Size(88, 40);
+            btnAddAccount.Size = new Size(77, 30);
             btnAddAccount.TabIndex = 57;
             btnAddAccount.Text = "Thêm";
             btnAddAccount.TextColor = Color.White;
@@ -753,18 +794,20 @@
             // tbxDisplay
             // 
             tbxDisplay.BackColor = Color.Tan;
-            tbxDisplay.Location = new Point(210, 83);
+            tbxDisplay.Location = new Point(184, 62);
+            tbxDisplay.Margin = new Padding(3, 2, 3, 2);
             tbxDisplay.Name = "tbxDisplay";
-            tbxDisplay.Size = new Size(281, 27);
+            tbxDisplay.Size = new Size(246, 23);
             tbxDisplay.TabIndex = 56;
             // 
             // tbxUser
             // 
             tbxUser.BackColor = Color.Tan;
-            tbxUser.Location = new Point(210, 21);
+            tbxUser.Location = new Point(184, 16);
+            tbxUser.Margin = new Padding(3, 2, 3, 2);
             tbxUser.Name = "tbxUser";
             tbxUser.PlaceholderText = "*Tên đăng nhập";
-            tbxUser.Size = new Size(281, 27);
+            tbxUser.Size = new Size(246, 23);
             tbxUser.TabIndex = 55;
             tbxUser.TextChanged += tbxUser_TextChanged;
             // 
@@ -772,9 +815,9 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(84, 83);
+            label11.Location = new Point(74, 62);
             label11.Name = "label11";
-            label11.Size = new Size(111, 28);
+            label11.Size = new Size(89, 21);
             label11.TabIndex = 54;
             label11.Text = "Tên hiển thị";
             // 
@@ -782,9 +825,9 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(68, 20);
+            label12.Location = new Point(60, 15);
             label12.Name = "label12";
-            label12.Size = new Size(127, 28);
+            label12.Size = new Size(101, 21);
             label12.TabIndex = 53;
             label12.Text = "Tên tài khoản";
             // 
@@ -792,9 +835,9 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(3, 190);
+            label13.Location = new Point(3, 142);
             label13.Name = "label13";
-            label13.Size = new Size(192, 28);
+            label13.Size = new Size(155, 21);
             label13.TabIndex = 52;
             label13.Text = "Danh sách danh mục";
             // 
@@ -803,39 +846,40 @@
             dgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvAccount.BackgroundColor = Color.Tan;
             dgvAccount.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Peru;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = Color.Peru;
+            dataGridViewCellStyle22.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle22.ForeColor = Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle22.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle22.WrapMode = DataGridViewTriState.True;
+            dgvAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             dgvAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.Tan;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvAccount.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = Color.Tan;
+            dataGridViewCellStyle23.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle23.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle23.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle23.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.False;
+            dgvAccount.DefaultCellStyle = dataGridViewCellStyle23;
             dgvAccount.EnableHeadersVisualStyles = false;
-            dgvAccount.Location = new Point(3, 221);
+            dgvAccount.Location = new Point(3, 166);
+            dgvAccount.Margin = new Padding(3, 2, 3, 2);
             dgvAccount.Name = "dgvAccount";
             dgvAccount.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.Tan;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvAccount.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = Color.Tan;
+            dataGridViewCellStyle24.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle24.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle24.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle24.WrapMode = DataGridViewTriState.True;
+            dgvAccount.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             dgvAccount.RowHeadersWidth = 51;
             dgvAccount.RowTemplate.Height = 29;
             dgvAccount.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAccount.Size = new Size(1120, 433);
+            dgvAccount.Size = new Size(980, 325);
             dgvAccount.TabIndex = 51;
             dgvAccount.CellClick += dgvAccount_CellClick;
             // 
@@ -853,9 +897,10 @@
             tabPage4.Controls.Add(dtpEnd);
             tabPage4.Controls.Add(dtpStart);
             tabPage4.Controls.Add(dgvBill);
-            tabPage4.Location = new Point(4, 29);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Margin = new Padding(3, 2, 3, 2);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1126, 657);
+            tabPage4.Size = new Size(984, 490);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Doanh thu";
             tabPage4.UseVisualStyleBackColor = true;
@@ -866,9 +911,9 @@
             label20.BackColor = Color.Transparent;
             label20.FlatStyle = FlatStyle.Flat;
             label20.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label20.Location = new Point(67, 19);
+            label20.Location = new Point(59, 14);
             label20.Name = "label20";
-            label20.Size = new Size(34, 28);
+            label20.Size = new Size(27, 21);
             label20.TabIndex = 53;
             label20.Text = "Từ";
             // 
@@ -878,9 +923,9 @@
             lblTongTien.BackColor = Color.Transparent;
             lblTongTien.FlatStyle = FlatStyle.Flat;
             lblTongTien.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTongTien.Location = new Point(967, 20);
+            lblTongTien.Location = new Point(846, 15);
             lblTongTien.Name = "lblTongTien";
-            lblTongTien.Size = new Size(24, 28);
+            lblTongTien.Size = new Size(19, 21);
             lblTongTien.TabIndex = 50;
             lblTongTien.Text = "...";
             // 
@@ -890,9 +935,9 @@
             lblSoHoaDon.BackColor = Color.Transparent;
             lblSoHoaDon.FlatStyle = FlatStyle.Flat;
             lblSoHoaDon.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSoHoaDon.Location = new Point(809, 20);
+            lblSoHoaDon.Location = new Point(708, 15);
             lblSoHoaDon.Name = "lblSoHoaDon";
-            lblSoHoaDon.Size = new Size(24, 28);
+            lblSoHoaDon.Size = new Size(19, 21);
             lblSoHoaDon.TabIndex = 52;
             lblSoHoaDon.Text = "...";
             // 
@@ -902,9 +947,9 @@
             label17.BackColor = Color.Transparent;
             label17.FlatStyle = FlatStyle.Flat;
             label17.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(862, 20);
+            label17.Location = new Point(754, 15);
             label17.Name = "label17";
-            label17.Size = new Size(99, 28);
+            label17.Size = new Size(78, 21);
             label17.TabIndex = 49;
             label17.Text = "Tổng tiền:";
             // 
@@ -914,9 +959,9 @@
             label19.BackColor = Color.Transparent;
             label19.FlatStyle = FlatStyle.Flat;
             label19.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(687, 20);
+            label19.Location = new Point(601, 15);
             label19.Name = "label19";
-            label19.Size = new Size(117, 28);
+            label19.Size = new Size(93, 21);
             label19.TabIndex = 51;
             label19.Text = "Số hóa đơn:";
             // 
@@ -926,9 +971,9 @@
             label16.BackColor = Color.Transparent;
             label16.FlatStyle = FlatStyle.Flat;
             label16.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(325, 20);
+            label16.Location = new Point(284, 15);
             label16.Name = "label16";
-            label16.Size = new Size(47, 28);
+            label16.Size = new Size(38, 21);
             label16.TabIndex = 46;
             label16.Text = "Đến";
             // 
@@ -937,15 +982,16 @@
             btnThongKe.BackColor = Color.FromArgb(128, 64, 0);
             btnThongKe.BackgroundColor = Color.FromArgb(128, 64, 0);
             btnThongKe.BorderColor = Color.White;
-            btnThongKe.BorderRadius = 15;
+            btnThongKe.BorderRadius = 10;
             btnThongKe.BorderSize = 2;
             btnThongKe.FlatAppearance.BorderSize = 0;
             btnThongKe.FlatStyle = FlatStyle.Flat;
             btnThongKe.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnThongKe.ForeColor = Color.White;
-            btnThongKe.Location = new Point(596, 20);
+            btnThongKe.Location = new Point(522, 15);
+            btnThongKe.Margin = new Padding(3, 2, 3, 2);
             btnThongKe.Name = "btnThongKe";
-            btnThongKe.Size = new Size(85, 28);
+            btnThongKe.Size = new Size(74, 21);
             btnThongKe.TabIndex = 47;
             btnThongKe.Text = "Thống kê";
             btnThongKe.TextColor = Color.White;
@@ -956,9 +1002,10 @@
             // 
             dtpEnd.CalendarMonthBackground = Color.Tan;
             dtpEnd.CalendarTitleBackColor = Color.FromArgb(128, 64, 0);
-            dtpEnd.Location = new Point(378, 19);
+            dtpEnd.Location = new Point(331, 14);
+            dtpEnd.Margin = new Padding(3, 2, 3, 2);
             dtpEnd.Name = "dtpEnd";
-            dtpEnd.Size = new Size(212, 27);
+            dtpEnd.Size = new Size(186, 23);
             dtpEnd.TabIndex = 45;
             dtpEnd.ValueChanged += dtpEnd_ValueChanged;
             // 
@@ -966,9 +1013,10 @@
             // 
             dtpStart.CalendarMonthBackground = Color.Tan;
             dtpStart.CalendarTitleBackColor = Color.FromArgb(128, 64, 0);
-            dtpStart.Location = new Point(107, 19);
+            dtpStart.Location = new Point(94, 14);
+            dtpStart.Margin = new Padding(3, 2, 3, 2);
             dtpStart.Name = "dtpStart";
-            dtpStart.Size = new Size(212, 27);
+            dtpStart.Size = new Size(186, 23);
             dtpStart.TabIndex = 44;
             dtpStart.Value = new DateTime(2023, 8, 1, 3, 59, 0, 0);
             dtpStart.ValueChanged += dtpStart_ValueChanged;
@@ -978,65 +1026,57 @@
             dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBill.BackgroundColor = Color.Tan;
             dgvBill.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.Peru;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle10.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.Peru;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle13.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             dgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.Tan;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle11.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dgvBill.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = Color.Tan;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle14.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            dgvBill.DefaultCellStyle = dataGridViewCellStyle14;
             dgvBill.EnableHeadersVisualStyles = false;
-            dgvBill.Location = new Point(3, 63);
+            dgvBill.Location = new Point(3, 47);
+            dgvBill.Margin = new Padding(3, 2, 3, 2);
             dgvBill.Name = "dgvBill";
             dgvBill.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.Tan;
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.Tan;
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle15.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             dgvBill.RowHeadersWidth = 51;
             dgvBill.RowTemplate.Height = 29;
             dgvBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBill.Size = new Size(1120, 591);
+            dgvBill.Size = new Size(980, 443);
             dgvBill.TabIndex = 43;
             // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(444, 178);
-            label7.Name = "label7";
-            label7.Size = new Size(78, 28);
-            label7.TabIndex = 46;
-            label7.Text = "Tên ảnh";
-            // 
             // FormManagement
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1161, 752);
+            ClientSize = new Size(1016, 564);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FormManagement";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormManagement";

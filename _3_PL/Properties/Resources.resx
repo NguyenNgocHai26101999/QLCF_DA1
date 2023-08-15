@@ -121,4 +121,19 @@
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="image-d1853295-230524144026" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-d1853295-230524144026.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="50ADTC_Giainhietcungnguoithuong_2432x1269" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\50ADTC_Giainhietcungnguoithuong_2432x1269.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1600x400_Highlands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1600x400_Highlands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="momo-upload-api-210524134049-637574604492504535" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\momo-upload-api-210524134049-637574604492504535.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Voucher-highlands-coffee-thang-6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Voucher-highlands-coffee-thang-6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
