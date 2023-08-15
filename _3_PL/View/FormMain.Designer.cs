@@ -30,11 +30,11 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -42,6 +42,7 @@
             btnMinimize = new Button();
             menuStrip1 = new MenuStrip();
             thôngTinTàiKhoảnToolStripMenuItem = new ToolStripMenuItem();
+            lịchSửHóaĐơnToolStripMenuItem = new ToolStripMenuItem();
             quảnLýToolStripMenuItem = new ToolStripMenuItem();
             trợGiúpToolStripMenuItem = new ToolStripMenuItem();
             dgvBill = new DataGridView();
@@ -88,7 +89,7 @@
             p4 = new PictureBox();
             p5 = new PictureBox();
             timer2 = new System.Windows.Forms.Timer(components);
-            lịchSửHóaĐơnToolStripMenuItem = new ToolStripMenuItem();
+            sqlConnection1 = new Microsoft.Data.SqlClient.SqlConnection();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -183,7 +184,7 @@
             menuStrip1.Location = new Point(11, 269);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 3, 0, 3);
-            menuStrip1.Size = new Size(842, 38);
+            menuStrip1.Size = new Size(692, 38);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -194,6 +195,14 @@
             thôngTinTàiKhoảnToolStripMenuItem.Size = new Size(216, 32);
             thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             thôngTinTàiKhoảnToolStripMenuItem.Click += thôngTinTàiKhoảnToolStripMenuItem_Click;
+            // 
+            // lịchSửHóaĐơnToolStripMenuItem
+            // 
+            lịchSửHóaĐơnToolStripMenuItem.Image = (Image)resources.GetObject("lịchSửHóaĐơnToolStripMenuItem.Image");
+            lịchSửHóaĐơnToolStripMenuItem.Name = "lịchSửHóaĐơnToolStripMenuItem";
+            lịchSửHóaĐơnToolStripMenuItem.Size = new Size(183, 32);
+            lịchSửHóaĐơnToolStripMenuItem.Text = "Lịch sử hóa đơn";
+            lịchSửHóaĐơnToolStripMenuItem.Click += lịchSửHóaĐơnToolStripMenuItem_Click;
             // 
             // quảnLýToolStripMenuItem
             // 
@@ -212,52 +221,52 @@
             // 
             // dgvBill
             // 
-            dataGridViewCellStyle6.BackColor = Color.Tan;
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = Color.Tan;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBill.BackgroundColor = Color.Tan;
             dgvBill.BorderStyle = BorderStyle.None;
             dgvBill.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvBill.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Peru;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Peru;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.Tan;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvBill.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Tan;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvBill.DefaultCellStyle = dataGridViewCellStyle3;
             dgvBill.EnableHeadersVisualStyles = false;
             dgvBill.Location = new Point(11, 353);
             dgvBill.Name = "dgvBill";
             dgvBill.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.Tan;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle9.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.Tan;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvBill.RowHeadersVisible = false;
             dgvBill.RowHeadersWidth = 51;
-            dataGridViewCellStyle10.BackColor = Color.Tan;
-            dataGridViewCellStyle10.ForeColor = Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = Color.Tan;
-            dataGridViewCellStyle10.SelectionForeColor = Color.Black;
-            dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = Color.Tan;
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Tan;
+            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
+            dgvBill.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvBill.RowTemplate.Height = 29;
             dgvBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvBill.Size = new Size(873, 361);
@@ -754,13 +763,12 @@
             timer2.Interval = 6000;
             timer2.Tick += timer2_Tick;
             // 
-            // lịchSửHóaĐơnToolStripMenuItem
+            // sqlConnection1
             // 
-            lịchSửHóaĐơnToolStripMenuItem.Image = (Image)resources.GetObject("lịchSửHóaĐơnToolStripMenuItem.Image");
-            lịchSửHóaĐơnToolStripMenuItem.Name = "lịchSửHóaĐơnToolStripMenuItem";
-            lịchSửHóaĐơnToolStripMenuItem.Size = new Size(183, 32);
-            lịchSửHóaĐơnToolStripMenuItem.Text = "Lịch sử hóa đơn";
-            lịchSửHóaĐơnToolStripMenuItem.Click += lịchSửHóaĐơnToolStripMenuItem_Click;
+            sqlConnection1.AccessToken = null;
+            sqlConnection1.Credential = null;
+            sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            sqlConnection1.StatisticsEnabled = false;
             // 
             // FormMain
             // 
@@ -894,5 +902,6 @@
         private PictureBox p5;
         private System.Windows.Forms.Timer timer2;
         private ToolStripMenuItem lịchSửHóaĐơnToolStripMenuItem;
+        private Microsoft.Data.SqlClient.SqlConnection sqlConnection1;
     }
 }
