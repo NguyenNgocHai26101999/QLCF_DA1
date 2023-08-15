@@ -681,6 +681,9 @@ namespace _3_PL.View
             e.Graphics.DrawString(temp, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, yPos + 150));
 
             e.Graphics.DrawString("Thankyou, See you again", new Font("Arial", 25, FontStyle.Regular), Brushes.Peru, new Point(250, yPos + 200));
+            
+            e.Graphics.DrawString("Mã hóa đơn: " + CurrentBill.Id, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(250, yPos + 250));
+
         }
         private void btnExportBill_Click(object sender, EventArgs e)
         {
@@ -715,6 +718,12 @@ namespace _3_PL.View
                 p5.Visible = false;
                 p1.Visible = true;
             }
+        }
+
+        private void lịchSửHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form f = new FormHistory();
+            f.ShowDialog();
         }
     }
 }
