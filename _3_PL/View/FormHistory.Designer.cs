@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHistory));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -44,6 +44,10 @@
             label3 = new Label();
             cmBill = new ContextMenuStrip(components);
             chiTiếtHóaĐơnToolStripMenuItem = new ToolStripMenuItem();
+            label4 = new Label();
+            lblIDBill = new Label();
+            printDocument1 = new System.Drawing.Printing.PrintDocument();
+            printPreviewDialog1 = new PrintPreviewDialog();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvBill).BeginInit();
@@ -119,49 +123,50 @@
             dgvBill.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBill.BackgroundColor = Color.Tan;
             dgvBill.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.Peru;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Peru;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvBill.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Tan;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dgvBill.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Tan;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvBill.DefaultCellStyle = dataGridViewCellStyle2;
             dgvBill.EnableHeadersVisualStyles = false;
-            dgvBill.Location = new Point(12, 207);
+            dgvBill.Location = new Point(12, 178);
             dgvBill.Name = "dgvBill";
             dgvBill.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.Tan;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Peru;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Tan;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Peru;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvBill.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvBill.RowHeadersWidth = 51;
             dgvBill.RowTemplate.Height = 29;
             dgvBill.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvBill.Size = new Size(1137, 533);
+            dgvBill.Size = new Size(1137, 562);
             dgvBill.TabIndex = 44;
+            dgvBill.CellClick += dgvBill_CellClick;
             // 
             // txbSearchFood
             // 
             txbSearchFood.BackColor = Color.Tan;
             txbSearchFood.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txbSearchFood.Location = new Point(435, 135);
+            txbSearchFood.Location = new Point(833, 117);
             txbSearchFood.Name = "txbSearchFood";
             txbSearchFood.PlaceholderText = "Theo mã hóa đơn";
-            txbSearchFood.Size = new Size(357, 34);
+            txbSearchFood.Size = new Size(316, 34);
             txbSearchFood.TabIndex = 45;
             txbSearchFood.TextChanged += txbSearchFood_TextChanged;
             // 
@@ -184,7 +189,7 @@
             label3.FlatStyle = FlatStyle.Flat;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(338, 138);
+            label3.Location = new Point(736, 120);
             label3.Name = "label3";
             label3.Size = new Size(91, 28);
             label3.TabIndex = 46;
@@ -195,15 +200,56 @@
             cmBill.ImageScalingSize = new Size(20, 20);
             cmBill.Items.AddRange(new ToolStripItem[] { chiTiếtHóaĐơnToolStripMenuItem });
             cmBill.Name = "cmBill";
-            cmBill.Size = new Size(215, 58);
+            cmBill.Size = new Size(189, 30);
             // 
             // chiTiếtHóaĐơnToolStripMenuItem
             // 
-            chiTiếtHóaĐơnToolStripMenuItem.BackColor = Color.Gold;
+            chiTiếtHóaĐơnToolStripMenuItem.BackColor = Color.PeachPuff;
             chiTiếtHóaĐơnToolStripMenuItem.Image = (Image)resources.GetObject("chiTiếtHóaĐơnToolStripMenuItem.Image");
             chiTiếtHóaĐơnToolStripMenuItem.Name = "chiTiếtHóaĐơnToolStripMenuItem";
-            chiTiếtHóaĐơnToolStripMenuItem.Size = new Size(214, 26);
+            chiTiếtHóaĐơnToolStripMenuItem.Size = new Size(188, 26);
             chiTiếtHóaĐơnToolStripMenuItem.Text = "Chi tiết hóa đơn";
+            chiTiếtHóaĐơnToolStripMenuItem.Click += chiTiếtHóaĐơnToolStripMenuItem_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.FlatStyle = FlatStyle.Flat;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(12, 123);
+            label4.Name = "label4";
+            label4.Size = new Size(122, 28);
+            label4.TabIndex = 48;
+            label4.Text = "Mã hóa đơn:";
+            // 
+            // lblIDBill
+            // 
+            lblIDBill.AutoSize = true;
+            lblIDBill.BackColor = Color.Transparent;
+            lblIDBill.FlatStyle = FlatStyle.Flat;
+            lblIDBill.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblIDBill.ForeColor = Color.Black;
+            lblIDBill.Location = new Point(136, 123);
+            lblIDBill.Name = "lblIDBill";
+            lblIDBill.Size = new Size(24, 28);
+            lblIDBill.TabIndex = 49;
+            lblIDBill.Text = "...";
+            // 
+            // printDocument1
+            // 
+            printDocument1.PrintPage += printDocument1_PrintPage;
+            // 
+            // printPreviewDialog1
+            // 
+            printPreviewDialog1.AutoScrollMargin = new Size(0, 0);
+            printPreviewDialog1.AutoScrollMinSize = new Size(0, 0);
+            printPreviewDialog1.ClientSize = new Size(400, 300);
+            printPreviewDialog1.Enabled = true;
+            printPreviewDialog1.Icon = (Icon)resources.GetObject("printPreviewDialog1.Icon");
+            printPreviewDialog1.Name = "printPreviewDialog1";
+            printPreviewDialog1.Visible = false;
             // 
             // FormHistory
             // 
@@ -212,6 +258,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1161, 752);
+            Controls.Add(lblIDBill);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(txbSearchFood);
@@ -243,5 +291,9 @@
         private Label label3;
         private ContextMenuStrip cmBill;
         private ToolStripMenuItem chiTiếtHóaĐơnToolStripMenuItem;
+        private Label label4;
+        private Label lblIDBill;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private PrintPreviewDialog printPreviewDialog1;
     }
 }

@@ -288,7 +288,7 @@ namespace _3_PL.View
                 btnFoodItem.TextImageRelation = TextImageRelation.ImageAboveText;
                 btnFoodItem.Click += DisplayBtn_Click;
 
-
+                
                 btnFoodItem.ContextMenuStrip = cmFood;
 
                 flowLayoutPanel1.AutoScroll = true;
@@ -681,7 +681,7 @@ namespace _3_PL.View
             e.Graphics.DrawString(temp, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(650, yPos + 150));
 
             e.Graphics.DrawString("Thankyou, See you again", new Font("Arial", 25, FontStyle.Regular), Brushes.Peru, new Point(250, yPos + 200));
-            
+
             e.Graphics.DrawString("Mã hóa đơn: " + CurrentBill.Id, new Font("Arial", 23, FontStyle.Regular), Brushes.Black, new Point(250, yPos + 250));
 
         }
